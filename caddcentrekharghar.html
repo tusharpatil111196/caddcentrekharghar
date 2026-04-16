@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CADD Centre Kharghar | Navi Mumbai – Official Training Centre</title>
+<meta name="description" content="CADD Centre Kharghar – Official Training Centre in Navi Mumbai. Industry-leading courses in BIM, Mechanical CADD, Civil & Architecture, IT & more. 37+ years of excellence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date()); gtag('config','G-XXXXXXXXXX');
+  function trackSection(n){gtag('event','section_view',{event_category:'engagement',event_label:n});}
+  function trackClick(n){gtag('event','click',{event_category:'cta',event_label:n});}
+</script>
+<style>
+:root{
+  --red:#e8151b; --red-dk:#c01015; --orange:#f26522;
+  --bg:#ffffff; --surface:#f7f8fa; --surface2:#eef0f4;
+  --border:#e2e6ed; --text:#1a2332; --muted:#5f6f85;
+  --light-r:#fff1f1; --r:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;line-height:1.65;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+
+.topbar{background:var(--red);padding:8px 5%;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;font-weight:600;color:#fff;}
+.topbar a{color:#fff;opacity:.9;transition:opacity .2s;}.topbar a:hover{opacity:1;}
+.tb-l{display:flex;gap:20px;align-items:center;}.tb-r{display:flex;gap:16px;align-items:center;}
+.tb-sep{opacity:.35;}
+
+nav{position:sticky;top:0;z-index:300;background:#fff;border-bottom:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.12);}
+.nav-logo{display:flex;align-items:center;height:100%;}
+.nav-logo svg{height:42px;width:auto;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links>li{position:relative;}
+.nav-links>li>a{display:flex;align-items:center;gap:4px;padding:8px 13px;border-radius:6px;font-size:13.5px;font-weight:600;color:var(--muted);transition:all .18s;white-space:nowrap;}
+.nav-links>li>a:hover{color:var(--red);background:var(--light-r);}
+.dd{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:#fff;border:1px solid var(--border);border-top:3px solid var(--red);border-radius:0 0 var(--r) var(--r);padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:all .2s;box-shadow:0 10px 40px rgba(0,0,0,.1);z-index:400;}
+.nav-links>li:hover .dd{opacity:1;pointer-events:all;transform:translateY(0);}
+.dd a{display:block;padding:8px 14px;font-size:13px;font-weight:500;color:var(--muted);border-radius:6px;transition:all .15s;}.dd a:hover{background:var(--light-r);color:var(--red);}
+.dd-sec{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);padding:10px 14px 3px;pointer-events:none;}
+.nav-cta{background:var(--red)!important;color:#fff!important;font-weight:700!important;padding:9px 22px!important;border-radius:6px!important;font-size:13.5px!important;}
+.nav-cta:hover{background:var(--red-dk)!important;}
+
+.ticker-wrap{background:var(--red);overflow:hidden;}
+.ticker{display:inline-block;white-space:nowrap;animation:tickerScroll 30s linear infinite;padding:10px 0;font-size:12.5px;font-weight:700;color:#fff;letter-spacing:.3px;}
+@keyframes tickerScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+.hero{position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:80px 5% 70px;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#fdf1f1 50%,#fff8f2 100%);}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(232,21,27,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(232,21,27,.035) 1px,transparent 1px);background-size:55px 55px;mask-image:radial-gradient(ellipse 80% 70% at 65% 45%,black 25%,transparent 100%);}
+.hero-accent{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--red),var(--orange));}
+.hero-blob{position:absolute;right:-80px;top:-120px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(232,21,27,.07) 0%,transparent 65%);pointer-events:none;}
+.hero-content{position:relative;z-index:2;max-width:820px;}
+
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;background:var(--light-r);border:1px solid rgba(232,21,27,.25);border-radius:4px;padding:5px 14px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin-bottom:22px;animation:fadeUp .5s ease both;}
+.pdot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pdotAnim 2s infinite;}
+@keyframes pdotAnim{0%,100%{opacity:1;}50%{opacity:.3;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,7vw,6rem);font-weight:900;text-transform:uppercase;line-height:1.0;letter-spacing:-.5px;color:var(--text);animation:fadeUp .55s .08s ease both;}
+.hero h1 .red{color:var(--red);}
+.hero h1 .outline{-webkit-text-stroke:2.5px var(--red);color:transparent;}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:540px;margin:18px 0 34px;line-height:1.8;animation:fadeUp .55s .16s ease both;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .55s .22s ease both;}
+
+.btn-red{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:700;font-size:15px;padding:13px 28px;border-radius:6px;border:none;cursor:pointer;font-family:'Barlow',sans-serif;transition:all .22s;}
+.btn-red:hover{background:var(--red-dk);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,21,27,.32);}
+.btn-outline-red{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--red);font-weight:700;font-size:15px;padding:12px 26px;border-radius:6px;border:2px solid var(--red);cursor:pointer;font-family:'Barlow',sans-serif;transition:all .22s;}
+.btn-outline-red:hover{background:var(--light-r);}
+
+.hero-stats{display:flex;flex-wrap:wrap;margin-top:52px;padding-top:36px;border-top:1px solid var(--border);animation:fadeUp .55s .30s ease both;}
+.stat-it{padding-right:36px;margin-right:36px;border-right:1px solid var(--border);}
+.stat-it:last-child{border-right:none;margin-right:0;padding-right:0;}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:2.6rem;font-weight:900;color:var(--red);line-height:1;}
+.stat-lbl{font-size:12px;color:var(--muted);margin-top:3px;font-weight:500;}
+
+.sec{padding:80px 5%;}
+.sec-white{background:#fff;}
+.sec-gray{background:var(--surface);}
+.kicker{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.kicker::before{content:'';width:26px;height:3px;background:var(--red);border-radius:2px;display:inline-block;}
+.kicker.wht::before{background:rgba(255,255,255,.5);}.kicker.wht{color:rgba(255,255,255,.7);}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;text-transform:uppercase;line-height:1.08;margin-bottom:12px;color:var(--text);}
+.sec-title .red{color:var(--red);}.sec-title.wht{color:#fff;}.sec-title.wht .red{color:#ffd0d0;}
+.sec-sub{font-size:15px;color:var(--muted);max-width:560px;line-height:1.8;margin-bottom:46px;}
+.sec-sub.wht{color:rgba(255,255,255,.6);}
+
+.bim-section{background:linear-gradient(135deg,#1a2332 0%,#22304a 55%,#1c1508 100%);padding:80px 5%;position:relative;overflow:hidden;border-top:4px solid var(--orange);}
+.bim-section::before{content:'BIM';position:absolute;right:-20px;top:-20px;font-family:'Barlow Condensed',sans-serif;font-size:220px;font-weight:900;color:rgba(242,101,34,.05);pointer-events:none;line-height:1;text-transform:uppercase;}
+.bim-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.bim-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(242,101,34,.15);border:1px solid rgba(242,101,34,.4);color:var(--orange);border-radius:4px;padding:5px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
+.bim-section h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;text-transform:uppercase;line-height:1.05;color:#fff;margin-bottom:16px;}
+.bim-section h2 span{color:var(--orange);}
+.bim-p{color:rgba(255,255,255,.6);font-size:15px;line-height:1.8;margin-bottom:24px;}
+.bim-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:26px;}
+.bim-mc{background:rgba(255,255,255,.05);border:1px solid rgba(242,101,34,.18);border-radius:8px;padding:14px 16px;}
+.bim-mc .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--orange);margin-bottom:4px;}
+.bim-mc .val{font-size:13.5px;font-weight:600;color:#fff;}
+.bim-tools{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px;}
+.tool-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:4px;padding:5px 11px;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);}
+.bim-right{display:flex;flex-direction:column;gap:12px;}
+.bim-topic{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-left:3px solid var(--orange);border-radius:8px;padding:15px 18px;transition:all .2s;}
+.bim-topic:hover{background:rgba(242,101,34,.08);}
+.bim-topic h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;}
+.bim-topic p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6;}
+
+.tab-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px;}
+.tab-btn{padding:8px 18px;border-radius:4px;font-size:13px;font-weight:700;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;font-family:'Barlow',sans-serif;transition:all .18s;}
+.tab-btn:hover,.tab-btn.active{background:var(--red);border-color:var(--red);color:#fff;}
+.courses-panel{display:none;}
+.courses-panel.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
+.course-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:26px;transition:all .25s;position:relative;overflow:hidden;cursor:pointer;}
+.course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.course-card:hover{border-color:rgba(232,21,27,.25);transform:translateY(-3px);box-shadow:0 12px 40px rgba(232,21,27,.1);}
+.course-card:hover::before{transform:scaleX(1);}
+.course-icon{font-size:26px;margin-bottom:12px;}
+.course-card h3{font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3;}
+.course-card p{font-size:13px;color:var(--muted);line-height:1.65;}
+.course-dur{display:inline-block;margin-top:12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--light-r);padding:3px 10px;border-radius:3px;}
+.course-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;}
+.ctag{font-size:11px;background:var(--surface);color:var(--muted);padding:3px 9px;border-radius:3px;border:1px solid var(--border);}
+.hot-badge{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:3px;}
+
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;}
+.prog-card{border-radius:var(--r);padding:30px 24px;position:relative;overflow:hidden;color:#fff;}
+.prog-card.c1{background:linear-gradient(135deg,var(--red-dk),var(--red));}
+.prog-card.c2{background:linear-gradient(135deg,#c94f00,var(--orange));}
+.prog-card.c3{background:linear-gradient(135deg,#1a2332,#2e4268);}
+.prog-card.c4{background:linear-gradient(135deg,#7a0a0d,var(--red-dk));}
+.prog-card h3{font-size:18px;font-weight:800;margin-bottom:4px;}
+.prog-card .hrs{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:12px;}
+.prog-card p{font-size:13px;color:rgba(255,255,255,.75);line-height:1.65;}
+.prog-num{position:absolute;bottom:-16px;right:-8px;font-family:'Barlow Condensed',sans-serif;font-size:95px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;pointer-events:none;}
+
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;}
+.why-card{padding:28px 24px;border-radius:var(--r);border:1.5px solid var(--border);background:#fff;transition:all .22s;}
+.why-card:hover{box-shadow:0 10px 36px rgba(232,21,27,.09);border-color:rgba(232,21,27,.2);}
+.why-icon{width:48px;height:48px;border-radius:10px;background:var(--light-r);display:grid;place-items:center;font-size:22px;margin-bottom:14px;}
+.why-card h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:7px;}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.7;}
+
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
+.rev-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:24px;}
+.stars{color:#f59e0b;font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.rev-text{font-size:13.5px;color:var(--muted);line-height:1.75;margin-bottom:16px;font-style:italic;}
+.rev-auth{display:flex;align-items:center;gap:12px;}
+.rev-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--orange));display:grid;place-items:center;font-weight:800;font-size:13px;color:#fff;flex-shrink:0;}
+.rev-name{font-weight:700;font-size:14px;color:var(--text);}
+.rev-course{font-size:12px;color:var(--muted);}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.c-info p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:28px;}
+.c-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:10px;}
+.c-icon{width:40px;height:40px;background:var(--light-r);border-radius:8px;display:grid;place-items:center;font-size:18px;flex-shrink:0;}
+.c-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px;}
+.c-val{font-size:14px;font-weight:600;color:var(--text);}
+.social-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.sbtn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:6px;font-size:13.5px;font-weight:700;cursor:pointer;border:none;font-family:'Barlow',sans-serif;transition:all .18s;}
+.sbtn-wa{background:#25d366;color:#fff;}.sbtn-wa:hover{background:#1db954;}
+.sbtn-fb{background:#1877f2;color:#fff;}.sbtn-fb:hover{background:#1565c0;}
+.sbtn-ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;}
+
+.lead-form{display:flex;flex-direction:column;gap:13px;}
+.form-box{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:32px;}
+.ftitle{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;color:var(--text);margin-bottom:4px;}
+.ftitle span{color:var(--red);}
+.fsub{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fg{display:flex;flex-direction:column;gap:5px;}
+.fg label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);}
+.fg input,.fg select,.fg textarea{background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:11px 14px;color:var(--text);font-family:'Barlow',sans-serif;font-size:14px;outline:none;transition:border-color .2s;width:100%;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--red);}
+.fg textarea{resize:vertical;min-height:86px;}
+#form-status{font-size:13px;padding:10px 14px;border-radius:6px;display:none;}
+#form-status.success{background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;display:block;}
+#form-status.error{background:#fff1f1;color:var(--red);border:1px solid #fecaca;display:block;}
+.fnote{font-size:12px;color:var(--muted);}
+
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 28px rgba(37,211,102,.45);cursor:pointer;transition:transform .2s;animation:waPop .5s 2s ease both;}
+.wa-float:hover{transform:scale(1.08);}
+.wa-float svg{width:30px;height:30px;fill:#fff;}
+@keyframes waPop{from{transform:scale(0);}to{transform:scale(1);}}
+.wa-tip{position:absolute;right:66px;background:#1a2332;color:#fff;font-size:12px;font-weight:700;padding:7px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+.wa-float:hover .wa-tip{opacity:1;}
+
+footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
+.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:40px;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.42);line-height:1.8;max-width:280px;margin-top:4px;}
+.footer-col h5{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin-bottom:14px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.48);transition:color .2s;}
+.footer-col ul li a:hover{color:rgba(255,255,255,.9);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.3);}
+.vbadge{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:6px 14px;font-weight:600;}
+.vbadge span{color:var(--red);}
+
+@media(max-width:900px){.bim-inner,.contact-grid{grid-template-columns:1fr;gap:36px;}.footer-top{grid-template-columns:1fr 1fr;}.form-row{grid-template-columns:1fr;}.tb-l{display:none;}}
+@media(max-width:640px){.footer-top{grid-template-columns:1fr;}.hero h1{font-size:2.8rem;}.hero-stats{flex-direction:column;gap:16px;}.stat-it{border-right:none;padding-right:0;margin-right:0;padding-bottom:14px;border-bottom:1px solid var(--border);}.stat-it:last-child{border-bottom:none;padding-bottom:0;}}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/919833851019" target="_blank" class="wa-float" onclick="trackClick('wa_float')">
+  <span class="wa-tip">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div class="topbar">
+  <div class="tb-l">
+    <a href="tel:02235960750">📞 022-35960750</a>
+    <span class="tb-sep">|</span>
+    <a href="https://wa.me/919833851019">💬 +91 98338 51019</a>
+    <span class="tb-sep">|</span>
+    <span>Plot No. 5, 101, 1st Floor, Grow More Tower, Kharghar, Navi Mumbai</span>
+  </div>
+  <div class="tb-r">
+    <a href="https://registry.caddcentre.com/" target="_blank">🎓 Certificate Verification</a>
+    <span class="tb-sep">|</span>
+    <a href="https://lms.caddcentre.com/" target="_blank">Student Login</a>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-logo">
+    <!--
+      CADD Centre official logo — recreated as inline SVG matching exact brand:
+      Red double-chevron mark + "CADD" bold wordmark + "CENTRE" in red tracking
+    -->
+    <svg viewBox="0 0 310 56" xmlns="http://www.w3.org/2000/svg" aria-label="CADD Centre Training Services">
+      <!-- Double chevron brand mark -->
+      <polygon points="0,6  20,6  32,28 20,50  0,50  12,28" fill="#e8151b"/>
+      <polygon points="16,6 36,6  48,28 36,50 16,50  28,28" fill="#c01015" opacity=".7"/>
+      <!-- CADD wordmark -->
+      <text x="56" y="37" font-family="'Barlow Condensed',Arial Narrow,Impact,sans-serif" font-weight="900" font-size="34" fill="#1a2332" letter-spacing="1">CADD</text>
+      <!-- CENTRE tracking word -->
+      <text x="57" y="51" font-family="'Barlow','Arial',sans-serif" font-weight="700" font-size="12" fill="#e8151b" letter-spacing="5.5">CENTRE</text>
+      <!-- ® mark -->
+      <text x="157" y="22" font-family="Arial,sans-serif" font-size="10" fill="#1a2332" font-weight="400">®</text>
+      <!-- Training Services sub-line -->
+      <text x="57" y="60" font-family="'Barlow','Arial',sans-serif" font-size="8" fill="#8595ae" letter-spacing="1">TRAINING SERVICES</text>
+    </svg>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li>
+      <a href="#courses">Courses ▾</a>
+      <div class="dd">
+        <div class="dd-sec">AEC / BIM</div>
+        <a href="#bim">🏗️ BIM – Executive Diploma</a>
+        <a href="#courses">Civil & Architecture</a>
+        <a href="#courses">Revit Architecture / MEP</a>
+        <div class="dd-sec">Product Design</div>
+        <a href="#courses">Mechanical CADD</a>
+        <a href="#courses">SolidWorks / CATIA / ANSYS</a>
+        <div class="dd-sec">Information Technology</div>
+        <a href="#courses">Python / Data Analytics / Java</a>
+        <a href="#courses">Ethical Hacking / IoT</a>
+        <div class="dd-sec">AI-Powered New</div>
+        <a href="#courses">AI Smart Design Courses</a>
+      </div>
+    </li>
+    <li><a href="#bim">BIM</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta" onclick="trackClick('nav_enquire')">Enquire Now →</a></li>
+  </ul>
+</nav>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    🏗️ Now Enrolling: Executive Diploma in BIM – Seats Filling Fast &nbsp;•&nbsp; 🤖 NEW: AI-Powered Smart Design Courses &nbsp;•&nbsp; 📜 Globally Recognized Certification | registry.caddcentre.com &nbsp;•&nbsp; 💼 100% Placement Assistance &nbsp;•&nbsp; 💳 0% EMI Available &nbsp;•&nbsp; 📞 +91 98338 51019 &nbsp;•&nbsp; 📍 Kharghar, Navi Mumbai &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    🏗️ Now Enrolling: Executive Diploma in BIM – Seats Filling Fast &nbsp;•&nbsp; 🤖 NEW: AI-Powered Smart Design Courses &nbsp;•&nbsp; 📜 Globally Recognized Certification | registry.caddcentre.com &nbsp;•&nbsp; 💼 100% Placement Assistance &nbsp;•&nbsp; 💳 0% EMI Available &nbsp;•&nbsp; 📞 +91 98338 51019 &nbsp;•&nbsp; 📍 Kharghar, Navi Mumbai
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-accent"></div>
+  <div class="hero-blob"></div>
+  <div class="hero-content">
+    <div class="hero-kicker"><span class="pdot"></span> Official Training Centre · Kharghar, Navi Mumbai</div>
+    <h1>World Class<br><span class="red">Engineering</span><br><span class="outline">Training</span></h1>
+    <p class="hero-sub">CADD Centre is Asia's largest CAD / CAM / BIM training network — 37+ years of excellence, 4M+ engineers trained, 350+ centres across the globe. Now right here in Kharghar.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-red" onclick="trackClick('hero_enroll')">🎓 Enroll Now</a>
+      <a href="#bim" class="btn-outline-red" onclick="trackClick('hero_bim')">BIM Course →</a>
+      <a href="https://marketing.caddcentre.com/uploads/course_summary_brochure_web.pdf" target="_blank" class="btn-outline-red" onclick="trackClick('hero_brochure')">📥 Download Brochure</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-it"><div class="stat-num">4M+</div><div class="stat-lbl">Engineers Trained Globally</div></div>
+      <div class="stat-it"><div class="stat-num">350+</div><div class="stat-lbl">Centres — Asia's Biggest</div></div>
+      <div class="stat-it"><div class="stat-num">37+</div><div class="stat-lbl">Years of Excellence</div></div>
+      <div class="stat-it"><div class="stat-num">100+</div><div class="stat-lbl">Industry-Ready Courses</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="bim-section" id="bim">
+  <div class="bim-inner">
+    <div>
+      <div class="bim-badge">🔥 Featured Program</div>
+      <h2>Executive Diploma<br>in <span>BIM</span> Technology</h2>
+      <p class="bim-p">Building Information Modeling is now mandatory on government projects across India, Middle East, UK & Singapore. Our 400-hour program is crafted by global industry experts, aligned to ISO 19650 standards.</p>
+      <div class="bim-meta">
+        <div class="bim-mc"><div class="lbl">Duration</div><div class="val">400 Hours</div></div>
+        <div class="bim-mc"><div class="lbl">Mode</div><div class="val">Full / Part / Intensive</div></div>
+        <div class="bim-mc"><div class="lbl">Schedule</div><div class="val">2 / 4 / 8 hrs per day</div></div>
+        <div class="bim-mc"><div class="lbl">Standard</div><div class="val">ISO 19650 Certified</div></div>
+      </div>
+      <p class="bim-p" style="font-size:13px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:10px;">TOOLS & TECHNOLOGIES</p>
+      <div class="bim-tools">
+        <span class="tool-chip">Revit Architecture</span><span class="tool-chip">Revit Structure</span><span class="tool-chip">Revit MEP</span>
+        <span class="tool-chip">AutoCAD</span><span class="tool-chip">Navisworks 5D</span><span class="tool-chip">BIM 360</span>
+        <span class="tool-chip">LOD / LOIN</span><span class="tool-chip">ISO 19650</span><span class="tool-chip">Clash Detection</span>
+      </div>
+      <a href="#contact" class="btn-red" style="background:var(--orange);" onclick="trackClick('bim_apply')">Apply for BIM Program →</a>
+    </div>
+    <div class="bim-right">
+      <div class="bim-topic"><h4>🏗️ BIM Implementation & LOD</h4><p>Master BIM concepts, Level of Development (LOD), LOIN principles, and ISO 19650 workflows used by top global AEC firms.</p></div>
+      <div class="bim-topic"><h4>📐 Revit Architecture, Structure & MEP</h4><p>Hands-on training in all three Revit disciplines — from conceptual modelling to construction documentation and collaboration.</p></div>
+      <div class="bim-topic"><h4>🔗 Clash Detection & 5D BIM</h4><p>Use Navisworks for 4D/5D simulation and clash detection to identify conflicts before construction begins.</p></div>
+      <div class="bim-topic"><h4>☁️ BIM 360 Cloud Collaboration</h4><p>Industry-leading cloud BIM platform for project management, document control and real-time team coordination.</p></div>
+      <div class="bim-topic"><h4>🌍 Global Job Readiness</h4><p>BIM is most demanded in Middle East, UK & Singapore — this program gives you the competitive edge for high-paying global roles.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-gray" id="courses">
+  <div class="kicker">Our Programs</div>
+  <h2 class="sec-title">Industry-Ready <span class="red">Courses</span></h2>
+  <p class="sec-sub">All certifications carry CADD Centre's globally recognized credential — verifiable online and accepted by top employers in 40+ countries.</p>
+  <div class="tab-row">
+    <button class="tab-btn active" onclick="showTab('aec',this)">🏗️ AEC / BIM</button>
+    <button class="tab-btn" onclick="showTab('mech',this)">⚙️ Mechanical</button>
+    <button class="tab-btn" onclick="showTab('it',this)">💻 IT & CS</button>
+    <button class="tab-btn" onclick="showTab('elec',this)">⚡ Electrical</button>
+    <button class="tab-btn" onclick="showTab('ai',this)">🤖 AI-Powered</button>
+  </div>
+  <div class="courses-panel active" id="tab-aec">
+    <div class="course-card"><span class="hot-badge">HOT</span><div class="course-icon">🏗️</div><h3>Executive Diploma in BIM</h3><p>Comprehensive BIM — Revit Architecture, Structure, MEP, Navisworks 5D, BIM 360 and ISO 19650.</p><span class="course-dur">400 Hours</span><div class="course-tags"><span class="ctag">Revit</span><span class="ctag">Navisworks</span><span class="ctag">BIM 360</span></div></div>
+    <div class="course-card"><div class="course-icon">🏛️</div><h3>Master Certificate in Architecture Design</h3><p>AutoCAD, Revit Architecture, SketchUp and 3ds Max for complete architectural design and visualization.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD</span><span class="ctag">Revit</span><span class="ctag">3ds Max</span></div></div>
+    <div class="course-card"><div class="course-icon">🏢</div><h3>Master Certificate in Building Design</h3><p>End-to-end building design from 2D drafting to 3D modelling, structural analysis and documentation.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD Civil</span><span class="ctag">STAAD.Pro</span><span class="ctag">ETABS</span></div></div>
+    <div class="course-card"><div class="course-icon">🔧</div><h3>Revit MEP Design</h3><p>Design HVAC, Electrical, Plumbing & Fire-fighting systems using Revit MEP for industrial and residential buildings.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Revit MEP</span><span class="ctag">HVAC</span><span class="ctag">Plumbing</span></div></div>
+    <div class="course-card"><div class="course-icon">📐</div><h3>STAAD.Pro — Structural Analysis</h3><p>Structural analysis for buildings, bridges and industrial structures with RC and steel design.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">STAAD.Pro</span><span class="ctag">RC Design</span><span class="ctag">Steel</span></div></div>
+    <div class="course-card"><div class="course-icon">🎨</div><h3>3ds Max + V-Ray Visualization</h3><p>Architectural visualization — interior/exterior modelling, photorealistic V-Ray rendering and walkthroughs.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">3ds Max</span><span class="ctag">V-Ray</span><span class="ctag">Animation</span></div></div>
+  </div>
+  <div class="courses-panel" id="tab-mech">
+    <div class="course-card"><div class="course-icon">⚙️</div><h3>Master Certificate in Product Design</h3><p>AutoCAD Mechanical, SolidWorks, CATIA — complete product development curriculum.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD</span><span class="ctag">SolidWorks</span><span class="ctag">CATIA</span></div></div>
+    <div class="course-card"><div class="course-icon">🔩</div><h3>SolidWorks — Proficient</h3><p>Part modelling, assembly, surface, sheet metal, weldment design and model visualisation using SolidWorks.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Modelling</span><span class="ctag">Assembly</span><span class="ctag">Sheet Metal</span></div></div>
+    <div class="course-card"><div class="course-icon">✈️</div><h3>CATIA — Proficient</h3><p>Solids, surfaces, assemblies and analysis with CATIA's powerful parametric modelling tools.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Design</span><span class="ctag">GSD</span><span class="ctag">Assembly</span></div></div>
+    <div class="course-card"><div class="course-icon">🔬</div><h3>ANSYS — FEA & Analysis</h3><p>Structural, modal, fatigue, thermal and finite element analysis with advanced materials modelling.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Static Analysis</span><span class="ctag">FEA</span><span class="ctag">Thermal</span></div></div>
+    <div class="course-card"><div class="course-icon">🛠️</div><h3>Creo — 3D Product Design</h3><p>Complete 3D digital models for FEA, rapid prototyping, tool design and CNC manufacturing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Modelling</span><span class="ctag">Surface</span><span class="ctag">Sheet Metal</span></div></div>
+    <div class="course-card"><div class="course-icon">🖥️</div><h3>NX CAD</h3><p>High-performance modelling, drafting and assembly design using NX's synchronous modelling toolset.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Sketch</span><span class="ctag">Assembly</span><span class="ctag">Free Form</span></div></div>
+  </div>
+  <div class="courses-panel" id="tab-it">
+    <div class="course-card"><div class="course-icon">🐍</div><h3>Python for Professionals</h3><p>Data structures, automation, OOP and real-world Python applications for industry use.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Python</span><span class="ctag">OOP</span><span class="ctag">Automation</span></div></div>
+    <div class="course-card"><div class="course-icon">📊</div><h3>Data Analytics for Professionals</h3><p>Data analysis, visualization and reporting tools used by professionals across industries worldwide.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Excel</span><span class="ctag">Python</span><span class="ctag">Data Viz</span></div></div>
+    <div class="course-card"><div class="course-icon">☕</div><h3>Java for Professionals</h3><p>Object-oriented Java programming for web apps, desktop and enterprise software development.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">OOP</span><span class="ctag">Web Apps</span><span class="ctag">Data Structures</span></div></div>
+    <div class="course-card"><div class="course-icon">🔐</div><h3>Ethical Hacking</h3><p>Detecting vulnerabilities in applications, systems and IT infrastructure. Network security and penetration testing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Network Security</span><span class="ctag">Pen Testing</span></div></div>
+    <div class="course-card"><div class="course-icon">🌐</div><h3>IoT — Internet of Things</h3><p>Connect devices with sensors and software using Raspberry Pi, cloud computing and IoT protocols.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Raspberry Pi</span><span class="ctag">Cloud</span><span class="ctag">IoT Protocols</span></div></div>
+    <div class="course-card"><div class="course-icon">🤖</div><h3>Robotics Design</h3><p>Hardware to software using Arduino prototyping platforms to create robots and interactive electronics.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Arduino</span><span class="ctag">Sensors</span><span class="ctag">Motors</span></div></div>
+  </div>
+  <div class="courses-panel" id="tab-elec">
+    <div class="course-card"><div class="course-icon">⚡</div><h3>AutoCAD Electrical</h3><p>Electrical and electronic diagrams, schematics, control circuits and panel layouts.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Schematics</span><span class="ctag">Panel</span><span class="ctag">BOM</span></div></div>
+    <div class="course-card"><div class="course-icon">🏭</div><h3>PLC / SCADA</h3><p>Industrial automation — PLC programming, SCADA systems and process control for manufacturing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">PLC</span><span class="ctag">SCADA</span><span class="ctag">Automation</span></div></div>
+    <div class="course-card"><div class="course-icon">💻</div><h3>Embedded Systems</h3><p>Embedded systems design, microcontroller programming and hardware-software integration.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Microcontroller</span><span class="ctag">C/C++</span><span class="ctag">RTOS</span></div></div>
+  </div>
+  <div class="courses-panel" id="tab-ai">
+    <div class="course-card" style="border-color:rgba(232,21,27,.3);"><span class="hot-badge">NEW</span><div class="course-icon">🤖</div><h3>Certificate in AI-Powered Smart Product Design</h3><p>Harness generative AI for product design workflows. Future-proof your engineering career in the age of AI.</p><span class="course-dur">Short Course</span><div class="course-tags"><span class="ctag">Generative AI</span><span class="ctag">Product Design</span></div></div>
+    <div class="course-card" style="border-color:rgba(232,21,27,.3);"><span class="hot-badge">NEW</span><div class="course-icon">🏙️</div><h3>Certificate in AI-Powered Smart Building Design</h3><p>AI-driven smart building design — integrate artificial intelligence into AEC workflows.</p><span class="course-dur">Short Course</span><div class="course-tags"><span class="ctag">Generative AI</span><span class="ctag">Building Design</span></div></div>
+    <div class="course-card"><div class="course-icon">📈</div><h3>Executive Diploma in BIM + AI</h3><p>Combine BIM and AI for the ultimate AEC career advantage — the most future-ready combination in construction tech.</p><span class="course-dur">400+ Hours</span><div class="course-tags"><span class="ctag">BIM</span><span class="ctag">AI</span><span class="ctag">Revit</span></div></div>
+  </div>
+</section>
+
+<section class="sec sec-white">
+  <div class="kicker">Program Structure</div>
+  <h2 class="sec-title">How We <span class="red">Train</span></h2>
+  <p class="sec-sub">CADD Centre's experiential learning methodology — real projects, hands-on training, validated certification ensures every student is job-ready.</p>
+  <div class="prog-grid">
+    <div class="prog-card c1"><h3>Proficient Certification</h3><div class="hrs">80 Hours</div><p>In-depth knowledge and competency in a core CAD software. Master one tool to professional level with real-world projects.</p><div class="prog-num">80</div></div>
+    <div class="prog-card c2"><h3>Master Certification</h3><div class="hrs">160 Hours</div><p>Master multiple complementing CAD tools across engineering domains with specializations in all disciplines.</p><div class="prog-num">160</div></div>
+    <div class="prog-card c3"><h3>Expert Certification</h3><div class="hrs">240 Hours</div><p>Engineering and managerial competencies for developing new products and services with qualified industry tutors.</p><div class="prog-num">240</div></div>
+    <div class="prog-card c4"><h3>Executive Diploma</h3><div class="hrs">400 Hours</div><p>Career-defining programs — BIM, Product Design, Architecture. MNC-ready certification recognized globally.</p><div class="prog-num">400</div></div>
+  </div>
+</section>
+
+<section class="sec sec-gray" id="why-us">
+  <div class="kicker">Why Choose Us</div>
+  <h2 class="sec-title">The <span class="red">CADD Centre</span> Advantage</h2>
+  <p class="sec-sub">37+ years of training excellence, now right here in Kharghar, Navi Mumbai.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🏆</div><h4>Official Training Centre</h4><p>Certificates backed by Asia's largest CAD network with global recognition in 24+ countries and 350+ centres.</p></div>
+    <div class="why-card"><div class="why-icon">👨‍🏫</div><h4>Expert Certified Faculty</h4><p>Industry-certified trainers with real experience. Personal attention to every student — doubts cleared every session.</p></div>
+    <div class="why-card"><div class="why-icon">💼</div><h4>100% Placement Support</h4><p>CADD Centre's placement cell helps you land jobs at top firms in India, Gulf, and beyond. Resume + mock interviews included.</p></div>
+    <div class="why-card"><div class="why-icon">📜</div><h4>Globally Recognized Certificates</h4><p>Verifiable at registry.caddcentre.com and accepted by employers in India, Middle East, UK and 40+ countries worldwide.</p></div>
+    <div class="why-card"><div class="why-icon">💳</div><h4>0% EMI Available</h4><p>Industry-first 0% EMI so your dream career is never limited by finances. Ask our counsellor for details.</p></div>
+    <div class="why-card"><div class="why-icon">🏗️</div><h4>BIM — Most In-Demand Skill</h4><p>BIM is mandatory on government projects. One of very few institutes offering a full Executive Diploma in BIM in Navi Mumbai.</p></div>
+    <div class="why-card"><div class="why-icon">🤖</div><h4>AI-Integrated Courses</h4><p>New AI-powered design courses to stay ahead in the era of generative AI. Continuously evolving with industry demands.</p></div>
+    <div class="why-card"><div class="why-icon">📍</div><h4>Conveniently Located</h4><p>Grow More Tower, Kharghar — well connected from across Navi Mumbai, Panvel and Belapur by road and metro.</p></div>
+  </div>
+</section>
+
+<section class="sec sec-white" id="reviews">
+  <div class="kicker">Student Reviews</div>
+  <h2 class="sec-title">What Our <span class="red">Students Say</span></h2>
+  <p class="sec-sub">Real students. Real results. Consistently rated 5 stars on Google.</p>
+  <div class="reviews-grid">
+    <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"I enrolled for AutoCAD Proficient course here. I learned many techniques and ideas to create mechanical 2D and 3D drawings. Teachers are very helpful and supportive. Highly recommend!"</p><div class="rev-auth"><div class="rev-av">CM</div><div><div class="rev-name">Chetan M.</div><div class="rev-course">AutoCAD Proficient Course</div></div></div></div>
+    <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"I completed my Master Diploma in Product Design & Analysis. The staff is well versed with industry standards. I gained the knowledge and experience required to compete in the outside world."</p><div class="rev-auth"><div class="rev-av">PS</div><div><div class="rev-name">Prathamesh S.</div><div class="rev-course">Master Diploma — Product Design</div></div></div></div>
+    <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"My experience with CADD Centre Kharghar is very fruitful. Teachers give personal attention to each student and make sure they're well practiced before moving to the next module."</p><div class="rev-auth"><div class="rev-av">AG</div><div><div class="rev-name">Abhishek G.</div><div class="rev-course">Mechanical CADD</div></div></div></div>
+    <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"Completed AutoCAD, SolidWorks and ANSYS here. Great experience with brilliant teachers. Very friendly in teaching. I learned a lot and feel very confident. Thank you for the guidance!"</p><div class="rev-auth"><div class="rev-av">PM</div><div><div class="rev-name">Pratik M.</div><div class="rev-course">AutoCAD + SolidWorks + ANSYS</div></div></div></div>
+    <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"The learning environment is amazing and in-depth knowledge is provided. Neelophar Ma'am was very helpful and cooperative. She cleared every doubt — teaching was very elaborative."</p><div class="rev-auth"><div class="rev-av">RK</div><div><div class="rev-name">Rutuparna K.</div><div class="rev-course">Master Diploma — Product Design</div></div></div></div>
+    <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"Excellent teaching and atmosphere. Learning AutoCAD Mechanical here was very helpful to build my career. The teaching staff are very friendly which makes learning the next software easy."</p><div class="rev-auth"><div class="rev-av">ER</div><div><div class="rev-name">Eshwar R.</div><div class="rev-course">AutoCAD Mechanical</div></div></div></div>
+  </div>
+</section>
+
+<section class="sec sec-gray" id="contact">
+  <div class="contact-grid">
+    <div class="c-info">
+      <div class="kicker">Get in Touch</div>
+      <h2 class="sec-title">Talk to a <span class="red">Career Counsellor</span></h2>
+      <p>Fill in your details and our counsellor will contact you within 2 hours. You'll also receive course information directly on your WhatsApp.</p>
+      <div class="c-item"><div class="c-icon">📍</div><div><div class="c-lbl">Address</div><div class="c-val">Plot No. 5, 101, 1st Floor, Grow More Tower,<br>Kharghar, Navi Mumbai – 410210</div></div></div>
+      <div class="c-item"><div class="c-icon">📞</div><div><div class="c-lbl">Phone</div><div class="c-val">022-35960750</div></div></div>
+      <div class="c-item"><div class="c-icon">💬</div><div><div class="c-lbl">WhatsApp</div><div class="c-val">+91 98338 51019</div></div></div>
+      <div class="c-item"><div class="c-icon">🕐</div><div><div class="c-lbl">Working Hours</div><div class="c-val">Monday – Saturday: 9:00 AM – 7:00 PM</div></div></div>
+      <div class="social-row">
+        <a href="https://wa.me/919833851019" target="_blank" class="sbtn sbtn-wa" onclick="trackClick('contact_wa')">💬 WhatsApp Us</a>
+        <a href="https://www.facebook.com/CaddCentreKharghar" target="_blank" class="sbtn sbtn-fb">Facebook</a>
+        <a href="https://www.instagram.com/caddcentrekharghar/" target="_blank" class="sbtn sbtn-ig">Instagram</a>
+      </div>
+    </div>
+    <div class="form-box">
+      <div class="ftitle">Free <span>Counselling</span> Session</div>
+      <div class="fsub">Share your details — our counsellor replies within 2 hours on WhatsApp.</div>
+      <form class="lead-form" id="leadForm">
+        <div class="form-row">
+          <div class="fg"><label>Full Name *</label><input type="text" id="fname" placeholder="Your full name" required></div>
+          <div class="fg"><label>WhatsApp Number *</label><input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" required></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" id="femail" placeholder="your@email.com"></div>
+        <div class="fg">
+          <label>Course Interested In *</label>
+          <select id="fcourse" required>
+            <option value="">— Select a course —</option>
+            <optgroup label="🏗️ AEC / BIM">
+              <option value="BIM — Executive Diploma">🔥 BIM — Executive Diploma (Most Popular)</option>
+              <option value="Master Certificate in Architecture Design">Master Certificate in Architecture Design</option>
+              <option value="Master Certificate in Building Design">Master Certificate in Building Design</option>
+              <option value="Revit MEP">Revit MEP</option>
+              <option value="STAAD.Pro">STAAD.Pro</option>
+            </optgroup>
+            <optgroup label="⚙️ Mechanical / Product Design">
+              <option value="Master Certificate in Product Design">Master Certificate in Product Design</option>
+              <option value="SolidWorks">SolidWorks</option>
+              <option value="CATIA">CATIA</option>
+              <option value="ANSYS">ANSYS</option>
+              <option value="Creo">Creo</option>
+            </optgroup>
+            <optgroup label="💻 IT & CS">
+              <option value="Python for Professionals">Python for Professionals</option>
+              <option value="Data Analytics">Data Analytics</option>
+              <option value="Java">Java</option>
+              <option value="Ethical Hacking">Ethical Hacking</option>
+            </optgroup>
+            <optgroup label="🤖 AI-Powered">
+              <option value="AI Smart Product Design">AI-Powered Smart Product Design</option>
+              <option value="AI Smart Building Design">AI-Powered Smart Building Design</option>
+            </optgroup>
+            <option value="Other / Not Sure">Other / Not Sure — Please advise</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Your Current Status</label>
+          <select id="fstatus">
+            <option value="">— Select —</option>
+            <option>Student (1st–3rd year)</option>
+            <option>Final Year Student</option>
+            <option>Recent Graduate</option>
+            <option>Working Professional</option>
+            <option>Job Seeker</option>
+            <option>Career Change</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message (Optional)</label><textarea id="fmessage" placeholder="Any questions, preferred batch timing, etc."></textarea></div>
+        <button type="submit" class="btn-red" style="width:100%;justify-content:center;font-size:15px;" id="submitBtn">📩 Submit — Get Free Counselling</button>
+        <div id="form-status"></div>
+        <p class="fnote">✅ Your enquiry will be forwarded to our counsellor on WhatsApp instantly. We reply within 2 hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <svg viewBox="0 0 310 62" xmlns="http://www.w3.org/2000/svg" style="height:40px;width:auto;margin-bottom:14px;" aria-label="CADD Centre">
+        <polygon points="0,6  20,6  32,28 20,50  0,50  12,28" fill="#e8151b"/>
+        <polygon points="16,6 36,6  48,28 36,50 16,50  28,28" fill="#c01015" opacity=".6"/>
+        <text x="56" y="37" font-family="'Barlow Condensed',Arial Narrow,Impact,sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="1">CADD</text>
+        <text x="57" y="51" font-family="'Barlow','Arial',sans-serif" font-weight="700" font-size="12" fill="#e8151b" letter-spacing="5.5">CENTRE</text>
+        <text x="157" y="22" font-family="Arial,sans-serif" font-size="10" fill="#ffffff" font-weight="400">®</text>
+        <text x="57" y="61" font-family="'Barlow','Arial',sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" letter-spacing="1">TRAINING SERVICES</text>
+      </svg>
+      <p>CADD Centre Kharghar is an official training centre of CADD Centre Training Services — Asia's largest CAD/CAM/BIM skill development network with 37+ years of excellence and 4M+ engineers trained globally.</p>
+      <p style="margin-top:10px;color:rgba(255,255,255,.2);font-size:12px;">Operated by Chakra Technologies · Plot No. 5, 101, Grow More Tower, Kharghar, Navi Mumbai 410210</p>
+    </div>
+    <div class="footer-col">
+      <h5>Courses</h5>
+      <ul>
+        <li><a href="#bim">BIM — Executive Diploma</a></li>
+        <li><a href="#courses">Architecture Design</a></li>
+        <li><a href="#courses">Mechanical CADD</a></li>
+        <li><a href="#courses">Civil Engineering</a></li>
+        <li><a href="#courses">AI Smart Design</a></li>
+        <li><a href="#courses">IT & CS</a></li>
+        <li><a href="#courses">Electrical CADD</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="https://registry.caddcentre.com/" target="_blank">Certificate Verification</a></li>
+        <li><a href="https://lms.caddcentre.com/" target="_blank">Student Login (LMS)</a></li>
+        <li><a href="https://marketing.caddcentre.com/uploads/course_summary_brochure_web.pdf" target="_blank">Download Brochure</a></li>
+        <li><a href="#reviews">Student Reviews</a></li>
+        <li><a href="#why-us">Why CADD Centre</a></li>
+        <li><a href="https://caddcentre.com" target="_blank">CADD Centre Head Office</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="https://wa.me/919833851019" target="_blank">💬 WA: +91 98338 51019</a></li>
+        <li><a href="tel:02235960750">📞 022-35960750</a></li>
+        <li><a href="https://www.facebook.com/CaddCentreKharghar" target="_blank">📘 Facebook</a></li>
+        <li><a href="https://www.instagram.com/caddcentrekharghar/" target="_blank">📸 Instagram</a></li>
+        <li><a href="https://maps.google.com/?q=Grow+More+Tower+Kharghar+Navi+Mumbai" target="_blank">📍 Get Directions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 CADD Centre Kharghar. All rights reserved. Official Training Centre of CADD Centre Training Services.</p>
+    <div class="vbadge"><span>✔</span> Authorized CADD Centre Training Partner</div>
+  </div>
+</footer>
+
+<script>
+function showTab(tab,btn){
+  document.querySelectorAll('.courses-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  btn.classList.add('active');
+  trackSection('courses_'+tab);
+}
+const _secs=[{id:'home',name:'Hero'},{id:'bim',name:'BIM'},{id:'courses',name:'Courses'},{id:'why-us',name:'WhyUs'},{id:'reviews',name:'Reviews'},{id:'contact',name:'Contact'}];
+const _obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const s=_secs.find(s=>s.id===e.target.id);if(s)trackSection(s.name);}});},{threshold:.25});
+_secs.forEach(s=>{const el=document.getElementById(s.id);if(el)_obs.observe(el);});
+
+document.getElementById('leadForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('fname').value.trim();
+  const phone=document.getElementById('fphone').value.trim();
+  const email=document.getElementById('femail').value.trim();
+  const course=document.getElementById('fcourse').value;
+  const status=document.getElementById('fstatus').value;
+  const message=document.getElementById('fmessage').value.trim();
+  const el=document.getElementById('form-status');
+  const btn=document.getElementById('submitBtn');
+  if(!name||!phone||!course){el.className='error';el.textContent='⚠️ Please fill in all required fields.';el.style.display='block';return;}
+  btn.textContent='Sending...';btn.disabled=true;
+  const waMsg=encodeURIComponent(
+    `📩 *New Enquiry — CADD Centre Kharghar*\n\n`+
+    `👤 *Name:* ${name}\n📱 *WhatsApp:* ${phone}\n📧 *Email:* ${email||'Not provided'}\n`+
+    `📚 *Course:* ${course}\n🎓 *Status:* ${status||'Not specified'}\n💬 *Message:* ${message||'—'}\n\n`+
+    `_Via chakratechnologies.co.in_`
+  );
+  trackClick('form_submit_'+course);
+  window.open(`https://wa.me/919833851019?text=${waMsg}`,'_blank');
+  el.className='success';el.textContent='✅ Enquiry sent! Our counsellor will reply within 2 hours.';el.style.display='block';
+  btn.textContent='✅ Sent!';
+  setTimeout(()=>{btn.textContent='📩 Submit — Get Free Counselling';btn.disabled=false;document.getElementById('leadForm').reset();setTimeout(()=>{el.className='';el.textContent='';el.style.display='none';},5000);},4000);
+});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30);});
+window.addEventListener('beforeunload',()=>{gtag('event','time_on_page',{event_category:'engagement',value:Math.round((Date.now()-performance.timing.navigationStart)/1000)});});
+</script>
+</body>
+</html>
