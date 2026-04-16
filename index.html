@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer=window.dataLayer||[];
@@ -116,7 +117,7 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.12);}
 .tab-btn:hover,.tab-btn.active{background:var(--red);border-color:var(--red);color:#fff;}
 .courses-panel{display:none;}
 .courses-panel.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
-.course-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:26px;transition:all .25s;position:relative;overflow:hidden;cursor:pointer;}
+.course-card{display:block;background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:26px;transition:all .25s;position:relative;overflow:hidden;cursor:pointer;}
 .course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
 .course-card:hover{border-color:rgba(232,21,27,.25);transform:translateY(-3px);box-shadow:0 12px 40px rgba(232,21,27,.1);}
 .course-card:hover::before{transform:scaleX(1);}
@@ -255,20 +256,20 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
       <a href="#courses">Courses ▾</a>
       <div class="dd">
         <div class="dd-sec">AEC / BIM</div>
-        <a href="#bim">🏗️ BIM – Executive Diploma</a>
-        <a href="#courses">Civil & Architecture</a>
-        <a href="#courses">Revit Architecture / MEP</a>
+        <a href="bim.html">🏗️ BIM – Executive Diploma</a>
+        <a href="architecture.html">Civil & Architecture</a>
+        <a href="architecture.html#revit-mep">Revit Architecture / MEP</a>
         <div class="dd-sec">Product Design</div>
-        <a href="#courses">Mechanical CADD</a>
-        <a href="#courses">SolidWorks / CATIA / ANSYS</a>
+        <a href="mechanical.html#mechanical-cadd">Mechanical CADD</a>
+        <a href="mechanical.html#solidworks-catia-ansys">SolidWorks / CATIA / ANSYS</a>
         <div class="dd-sec">Information Technology</div>
-        <a href="#courses">Python / Data Analytics / Java</a>
-        <a href="#courses">Ethical Hacking / IoT</a>
+        <a href="it-cs.html#python">Python / Data Analytics / Java</a>
+        <a href="it-cs.html#ethical-hacking-iot">Ethical Hacking / IoT</a>
         <div class="dd-sec">AI-Powered New</div>
-        <a href="#courses">AI Smart Design Courses</a>
+        <a href="ai.html">AI Smart Design Courses</a>
       </div>
     </li>
-    <li><a href="#bim">BIM</a></li>
+    <li><a href="bim.html">BIM</a></li>
     <li><a href="#why-us">Why Us</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -346,38 +347,38 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
     <button class="tab-btn" onclick="showTab('ai',this)">🤖 AI-Powered</button>
   </div>
   <div class="courses-panel active" id="tab-aec">
-    <div class="course-card"><span class="hot-badge">HOT</span><div class="course-icon">🏗️</div><h3>Executive Diploma in BIM</h3><p>Comprehensive BIM — Revit Architecture, Structure, MEP, Navisworks 5D, BIM 360 and ISO 19650.</p><span class="course-dur">400 Hours</span><div class="course-tags"><span class="ctag">Revit</span><span class="ctag">Navisworks</span><span class="ctag">BIM 360</span></div></div>
-    <div class="course-card"><div class="course-icon">🏛️</div><h3>Master Certificate in Architecture Design</h3><p>AutoCAD, Revit Architecture, SketchUp and 3ds Max for complete architectural design and visualization.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD</span><span class="ctag">Revit</span><span class="ctag">3ds Max</span></div></div>
-    <div class="course-card"><div class="course-icon">🏢</div><h3>Master Certificate in Building Design</h3><p>End-to-end building design from 2D drafting to 3D modelling, structural analysis and documentation.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD Civil</span><span class="ctag">STAAD.Pro</span><span class="ctag">ETABS</span></div></div>
-    <div class="course-card"><div class="course-icon">🔧</div><h3>Revit MEP Design</h3><p>Design HVAC, Electrical, Plumbing & Fire-fighting systems using Revit MEP for industrial and residential buildings.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Revit MEP</span><span class="ctag">HVAC</span><span class="ctag">Plumbing</span></div></div>
-    <div class="course-card"><div class="course-icon">📐</div><h3>STAAD.Pro — Structural Analysis</h3><p>Structural analysis for buildings, bridges and industrial structures with RC and steel design.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">STAAD.Pro</span><span class="ctag">RC Design</span><span class="ctag">Steel</span></div></div>
-    <div class="course-card"><div class="course-icon">🎨</div><h3>3ds Max + V-Ray Visualization</h3><p>Architectural visualization — interior/exterior modelling, photorealistic V-Ray rendering and walkthroughs.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">3ds Max</span><span class="ctag">V-Ray</span><span class="ctag">Animation</span></div></div>
+    <a href="bim.html" class="course-card"><span class="hot-badge">HOT</span><div class="course-icon">🏗️</div><h3>Executive Diploma in BIM</h3><p>Comprehensive BIM — Revit Architecture, Structure, MEP, Navisworks 5D, BIM 360 and ISO 19650.</p><span class="course-dur">400 Hours</span><div class="course-tags"><span class="ctag">Revit</span><span class="ctag">Navisworks</span><span class="ctag">BIM 360</span></div></a>
+    <a href="architecture.html" class="course-card"><div class="course-icon">🏛️</div><h3>Master Certificate in Architecture Design</h3><p>AutoCAD, Revit Architecture, SketchUp and 3ds Max for complete architectural design and visualization.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD</span><span class="ctag">Revit</span><span class="ctag">3ds Max</span></div></a>
+    <a href="architecture.html#building-design" class="course-card"><div class="course-icon">🏢</div><h3>Master Certificate in Building Design</h3><p>End-to-end building design from 2D drafting to 3D modelling, structural analysis and documentation.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD Civil</span><span class="ctag">STAAD.Pro</span><span class="ctag">ETABS</span></div></a>
+    <a href="architecture.html#revit-mep" class="course-card"><div class="course-icon">🔧</div><h3>Revit MEP Design</h3><p>Design HVAC, Electrical, Plumbing & Fire-fighting systems using Revit MEP for industrial and residential buildings.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Revit MEP</span><span class="ctag">HVAC</span><span class="ctag">Plumbing</span></div></a>
+    <a href="architecture.html#staad-pro" class="course-card"><div class="course-icon">📐</div><h3>STAAD.Pro — Structural Analysis</h3><p>Structural analysis for buildings, bridges and industrial structures with RC and steel design.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">STAAD.Pro</span><span class="ctag">RC Design</span><span class="ctag">Steel</span></div></a>
+    <a href="architecture.html#visualization" class="course-card"><div class="course-icon">🎨</div><h3>3ds Max + V-Ray Visualization</h3><p>Architectural visualization — interior/exterior modelling, photorealistic V-Ray rendering and walkthroughs.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">3ds Max</span><span class="ctag">V-Ray</span><span class="ctag">Animation</span></div></a>
   </div>
   <div class="courses-panel" id="tab-mech">
-    <div class="course-card"><div class="course-icon">⚙️</div><h3>Master Certificate in Product Design</h3><p>AutoCAD Mechanical, SolidWorks, CATIA — complete product development curriculum.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD</span><span class="ctag">SolidWorks</span><span class="ctag">CATIA</span></div></div>
-    <div class="course-card"><div class="course-icon">🔩</div><h3>SolidWorks — Proficient</h3><p>Part modelling, assembly, surface, sheet metal, weldment design and model visualisation using SolidWorks.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Modelling</span><span class="ctag">Assembly</span><span class="ctag">Sheet Metal</span></div></div>
-    <div class="course-card"><div class="course-icon">✈️</div><h3>CATIA — Proficient</h3><p>Solids, surfaces, assemblies and analysis with CATIA's powerful parametric modelling tools.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Design</span><span class="ctag">GSD</span><span class="ctag">Assembly</span></div></div>
-    <div class="course-card"><div class="course-icon">🔬</div><h3>ANSYS — FEA & Analysis</h3><p>Structural, modal, fatigue, thermal and finite element analysis with advanced materials modelling.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Static Analysis</span><span class="ctag">FEA</span><span class="ctag">Thermal</span></div></div>
-    <div class="course-card"><div class="course-icon">🛠️</div><h3>Creo — 3D Product Design</h3><p>Complete 3D digital models for FEA, rapid prototyping, tool design and CNC manufacturing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Modelling</span><span class="ctag">Surface</span><span class="ctag">Sheet Metal</span></div></div>
-    <div class="course-card"><div class="course-icon">🖥️</div><h3>NX CAD</h3><p>High-performance modelling, drafting and assembly design using NX's synchronous modelling toolset.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Sketch</span><span class="ctag">Assembly</span><span class="ctag">Free Form</span></div></div>
+    <a href="mechanical.html" class="course-card"><div class="course-icon">⚙️</div><h3>Master Certificate in Product Design</h3><p>AutoCAD Mechanical, SolidWorks, CATIA — complete product development curriculum.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD</span><span class="ctag">SolidWorks</span><span class="ctag">CATIA</span></div></a>
+    <a href="mechanical.html#solidworks" class="course-card"><div class="course-icon">🔩</div><h3>SolidWorks — Proficient</h3><p>Part modelling, assembly, surface, sheet metal, weldment design and model visualisation using SolidWorks.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Modelling</span><span class="ctag">Assembly</span><span class="ctag">Sheet Metal</span></div></a>
+    <a href="mechanical.html#catia" class="course-card"><div class="course-icon">✈️</div><h3>CATIA — Proficient</h3><p>Solids, surfaces, assemblies and analysis with CATIA's powerful parametric modelling tools.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Design</span><span class="ctag">GSD</span><span class="ctag">Assembly</span></div></a>
+    <a href="mechanical.html#ansys" class="course-card"><div class="course-icon">🔬</div><h3>ANSYS — FEA & Analysis</h3><p>Structural, modal, fatigue, thermal and finite element analysis with advanced materials modelling.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Static Analysis</span><span class="ctag">FEA</span><span class="ctag">Thermal</span></div></a>
+    <a href="mechanical.html#creo" class="course-card"><div class="course-icon">🛠️</div><h3>Creo — 3D Product Design</h3><p>Complete 3D digital models for FEA, rapid prototyping, tool design and CNC manufacturing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Modelling</span><span class="ctag">Surface</span><span class="ctag">Sheet Metal</span></div></a>
+    <a href="mechanical.html#nx" class="course-card"><div class="course-icon">🖥️</div><h3>NX CAD</h3><p>High-performance modelling, drafting and assembly design using NX's synchronous modelling toolset.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Sketch</span><span class="ctag">Assembly</span><span class="ctag">Free Form</span></div></a>
   </div>
   <div class="courses-panel" id="tab-it">
-    <div class="course-card"><div class="course-icon">🐍</div><h3>Python for Professionals</h3><p>Data structures, automation, OOP and real-world Python applications for industry use.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Python</span><span class="ctag">OOP</span><span class="ctag">Automation</span></div></div>
-    <div class="course-card"><div class="course-icon">📊</div><h3>Data Analytics for Professionals</h3><p>Data analysis, visualization and reporting tools used by professionals across industries worldwide.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Excel</span><span class="ctag">Python</span><span class="ctag">Data Viz</span></div></div>
-    <div class="course-card"><div class="course-icon">☕</div><h3>Java for Professionals</h3><p>Object-oriented Java programming for web apps, desktop and enterprise software development.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">OOP</span><span class="ctag">Web Apps</span><span class="ctag">Data Structures</span></div></div>
-    <div class="course-card"><div class="course-icon">🔐</div><h3>Ethical Hacking</h3><p>Detecting vulnerabilities in applications, systems and IT infrastructure. Network security and penetration testing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Network Security</span><span class="ctag">Pen Testing</span></div></div>
-    <div class="course-card"><div class="course-icon">🌐</div><h3>IoT — Internet of Things</h3><p>Connect devices with sensors and software using Raspberry Pi, cloud computing and IoT protocols.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Raspberry Pi</span><span class="ctag">Cloud</span><span class="ctag">IoT Protocols</span></div></div>
-    <div class="course-card"><div class="course-icon">🤖</div><h3>Robotics Design</h3><p>Hardware to software using Arduino prototyping platforms to create robots and interactive electronics.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Arduino</span><span class="ctag">Sensors</span><span class="ctag">Motors</span></div></div>
+    <a href="it-cs.html#python" class="course-card"><div class="course-icon">🐍</div><h3>Python for Professionals</h3><p>Data structures, automation, OOP and real-world Python applications for industry use.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Python</span><span class="ctag">OOP</span><span class="ctag">Automation</span></div></a>
+    <a href="it-cs.html#data-analytics" class="course-card"><div class="course-icon">📊</div><h3>Data Analytics for Professionals</h3><p>Data analysis, visualization and reporting tools used by professionals across industries worldwide.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Excel</span><span class="ctag">Python</span><span class="ctag">Data Viz</span></div></a>
+    <a href="it-cs.html#java" class="course-card"><div class="course-icon">☕</div><h3>Java for Professionals</h3><p>Object-oriented Java programming for web apps, desktop and enterprise software development.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">OOP</span><span class="ctag">Web Apps</span><span class="ctag">Data Structures</span></div></a>
+    <a href="it-cs.html#ethical-hacking" class="course-card"><div class="course-icon">🔐</div><h3>Ethical Hacking</h3><p>Detecting vulnerabilities in applications, systems and IT infrastructure. Network security and penetration testing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Network Security</span><span class="ctag">Pen Testing</span></div></a>
+    <a href="it-cs.html#iot" class="course-card"><div class="course-icon">🌐</div><h3>IoT — Internet of Things</h3><p>Connect devices with sensors and software using Raspberry Pi, cloud computing and IoT protocols.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Raspberry Pi</span><span class="ctag">Cloud</span><span class="ctag">IoT Protocols</span></div></a>
+    <a href="it-cs.html#robotics" class="course-card"><div class="course-icon">🤖</div><h3>Robotics Design</h3><p>Hardware to software using Arduino prototyping platforms to create robots and interactive electronics.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Arduino</span><span class="ctag">Sensors</span><span class="ctag">Motors</span></div></a>
   </div>
   <div class="courses-panel" id="tab-elec">
-    <div class="course-card"><div class="course-icon">⚡</div><h3>AutoCAD Electrical</h3><p>Electrical and electronic diagrams, schematics, control circuits and panel layouts.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Schematics</span><span class="ctag">Panel</span><span class="ctag">BOM</span></div></div>
-    <div class="course-card"><div class="course-icon">🏭</div><h3>PLC / SCADA</h3><p>Industrial automation — PLC programming, SCADA systems and process control for manufacturing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">PLC</span><span class="ctag">SCADA</span><span class="ctag">Automation</span></div></div>
-    <div class="course-card"><div class="course-icon">💻</div><h3>Embedded Systems</h3><p>Embedded systems design, microcontroller programming and hardware-software integration.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Microcontroller</span><span class="ctag">C/C++</span><span class="ctag">RTOS</span></div></div>
+    <a href="electrical.html#autocad-electrical" class="course-card"><div class="course-icon">⚡</div><h3>AutoCAD Electrical</h3><p>Electrical and electronic diagrams, schematics, control circuits and panel layouts.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Schematics</span><span class="ctag">Panel</span><span class="ctag">BOM</span></div></a>
+    <a href="electrical.html#plc-scada" class="course-card"><div class="course-icon">🏭</div><h3>PLC / SCADA</h3><p>Industrial automation — PLC programming, SCADA systems and process control for manufacturing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">PLC</span><span class="ctag">SCADA</span><span class="ctag">Automation</span></div></a>
+    <a href="electrical.html#embedded-systems" class="course-card"><div class="course-icon">💻</div><h3>Embedded Systems</h3><p>Embedded systems design, microcontroller programming and hardware-software integration.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Microcontroller</span><span class="ctag">C/C++</span><span class="ctag">RTOS</span></div></a>
   </div>
   <div class="courses-panel" id="tab-ai">
-    <div class="course-card" style="border-color:rgba(232,21,27,.3);"><span class="hot-badge">NEW</span><div class="course-icon">🤖</div><h3>Certificate in AI-Powered Smart Product Design</h3><p>Harness generative AI for product design workflows. Future-proof your engineering career in the age of AI.</p><span class="course-dur">Short Course</span><div class="course-tags"><span class="ctag">Generative AI</span><span class="ctag">Product Design</span></div></div>
-    <div class="course-card" style="border-color:rgba(232,21,27,.3);"><span class="hot-badge">NEW</span><div class="course-icon">🏙️</div><h3>Certificate in AI-Powered Smart Building Design</h3><p>AI-driven smart building design — integrate artificial intelligence into AEC workflows.</p><span class="course-dur">Short Course</span><div class="course-tags"><span class="ctag">Generative AI</span><span class="ctag">Building Design</span></div></div>
-    <div class="course-card"><div class="course-icon">📈</div><h3>Executive Diploma in BIM + AI</h3><p>Combine BIM and AI for the ultimate AEC career advantage — the most future-ready combination in construction tech.</p><span class="course-dur">400+ Hours</span><div class="course-tags"><span class="ctag">BIM</span><span class="ctag">AI</span><span class="ctag">Revit</span></div></div>
+    <a href="ai.html#product-design" class="course-card" style="border-color:rgba(232,21,27,.3);"><span class="hot-badge">NEW</span><div class="course-icon">🤖</div><h3>Certificate in AI-Powered Smart Product Design</h3><p>Harness generative AI for product design workflows. Future-proof your engineering career in the age of AI.</p><span class="course-dur">Short Course</span><div class="course-tags"><span class="ctag">Generative AI</span><span class="ctag">Product Design</span></div></a>
+    <a href="ai.html#building-design" class="course-card" style="border-color:rgba(232,21,27,.3);"><span class="hot-badge">NEW</span><div class="course-icon">🏙️</div><h3>Certificate in AI-Powered Smart Building Design</h3><p>AI-driven smart building design — integrate artificial intelligence into AEC workflows.</p><span class="course-dur">Short Course</span><div class="course-tags"><span class="ctag">Generative AI</span><span class="ctag">Building Design</span></div></a>
+    <a href="ai.html" class="course-card"><div class="course-icon">📈</div><h3>Executive Diploma in BIM + AI</h3><p>Combine BIM and AI for the ultimate AEC career advantage — the most future-ready combination in construction tech.</p><span class="course-dur">400+ Hours</span><div class="course-tags"><span class="ctag">BIM</span><span class="ctag">AI</span><span class="ctag">Revit</span></div></a>
   </div>
 </section>
 
@@ -517,13 +518,13 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
     <div class="footer-col">
       <h5>Courses</h5>
       <ul>
-        <li><a href="#bim">BIM — Executive Diploma</a></li>
-        <li><a href="#courses">Architecture Design</a></li>
-        <li><a href="#courses">Mechanical CADD</a></li>
-        <li><a href="#courses">Civil Engineering</a></li>
-        <li><a href="#courses">AI Smart Design</a></li>
-        <li><a href="#courses">IT & CS</a></li>
-        <li><a href="#courses">Electrical CADD</a></li>
+        <li><a href="bim.html">BIM — Executive Diploma</a></li>
+        <li><a href="architecture.html">Architecture Design</a></li>
+        <li><a href="mechanical.html">Mechanical CADD</a></li>
+        <li><a href="architecture.html#building-design">Civil Engineering</a></li>
+        <li><a href="ai.html">AI Smart Design</a></li>
+        <li><a href="it-cs.html">IT & CS</a></li>
+        <li><a href="electrical.html">Electrical CADD</a></li>
       </ul>
     </div>
     <div class="footer-col">
