@@ -35,20 +35,108 @@ img{display:block;max-width:100%;}
 .tb-l{display:flex;gap:20px;align-items:center;}.tb-r{display:flex;gap:16px;align-items:center;}
 .tb-sep{opacity:.35;}
 
+/* ═══════════════════════════════════════════
+   NAV + MEGA DROPDOWN
+═══════════════════════════════════════════ */
 nav{position:sticky;top:0;z-index:300;background:#fff;border-bottom:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:box-shadow .3s;}
 nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.12);}
 .nav-logo{display:flex;align-items:center;height:100%;}
 .nav-logo svg{height:42px;width:auto;}
+
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
 .nav-links>li{position:relative;}
 .nav-links>li>a{display:flex;align-items:center;gap:4px;padding:8px 13px;border-radius:6px;font-size:13.5px;font-weight:600;color:var(--muted);transition:all .18s;white-space:nowrap;}
 .nav-links>li>a:hover{color:var(--red);background:var(--light-r);}
-.dd{position:absolute;top:calc(100% + 6px);left:0;min-width:240px;background:#fff;border:1px solid var(--border);border-top:3px solid var(--red);border-radius:0 0 var(--r) var(--r);padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:all .2s;box-shadow:0 10px 40px rgba(0,0,0,.1);z-index:400;}
-.nav-links>li:hover .dd{opacity:1;pointer-events:all;transform:translateY(0);}
-.dd a{display:block;padding:8px 14px;font-size:13px;font-weight:500;color:var(--muted);border-radius:6px;transition:all .15s;}.dd a:hover{background:var(--light-r);color:var(--red);}
-.dd-sec{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);padding:10px 14px 3px;pointer-events:none;}
 .nav-cta{background:var(--red)!important;color:#fff!important;font-weight:700!important;padding:9px 22px!important;border-radius:6px!important;font-size:13.5px!important;}
 .nav-cta:hover{background:var(--red-dk)!important;}
+
+/* Level-1 dropdown panel */
+.mega-l1{
+  display:none;position:absolute;top:calc(100% + 0px);left:0;
+  background:#fff;border:1px solid var(--border);border-top:3px solid var(--red);
+  border-radius:0 0 var(--r) var(--r);padding:6px;min-width:230px;
+  box-shadow:0 10px 40px rgba(0,0,0,.1);z-index:500;
+}
+.nav-links>li:hover .mega-l1{display:block;}
+
+/* L1 row items */
+.l1-row{
+  position:relative;display:flex;align-items:center;justify-content:space-between;
+  padding:9px 14px;border-radius:7px;font-size:13.5px;font-weight:600;
+  color:var(--muted);cursor:pointer;white-space:nowrap;transition:all .15s;
+}
+.l1-row:hover{background:var(--light-r);color:var(--red);}
+.l1-row .l1-ico{margin-right:7px;font-size:15px;}
+.l1-row .l1-arr{font-size:11px;opacity:.45;margin-left:8px;}
+.l1-new{font-size:9px;font-weight:800;background:var(--red);color:#fff;padding:1px 5px;border-radius:3px;margin-left:5px;text-transform:uppercase;letter-spacing:.5px;}
+
+/* Level-2 flyout */
+.mega-l2{
+  display:none;position:absolute;top:0;left:calc(100% + 2px);
+  background:#fff;border:1px solid var(--border);border-top:3px solid var(--red);
+  border-radius:0 var(--r) var(--r) var(--r);
+  padding:0;min-width:580px;max-width:660px;
+  box-shadow:0 10px 40px rgba(0,0,0,.1);z-index:600;overflow:hidden;
+}
+.l1-row:hover .mega-l2{display:block;}
+
+.l2-head{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:12px 18px;display:flex;align-items:center;justify-content:space-between;
+}
+.l2-head-title{font-size:13px;font-weight:800;color:var(--text);}
+.l2-head-sub{font-size:11px;color:var(--muted);}
+.l2-enq{font-size:11.5px;font-weight:700;color:var(--red);background:var(--light-r);padding:4px 10px;border-radius:4px;white-space:nowrap;}
+.l2-enq:hover{background:var(--red);color:#fff;}
+
+.l2-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:6px;}
+.l2-item{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:9px 12px;border-radius:7px;cursor:pointer;text-decoration:none;
+  color:inherit;transition:background .12s;
+}
+.l2-item:hover{background:var(--light-r);}
+.l2-dot{
+  width:32px;height:32px;border-radius:7px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:15px;margin-top:1px;
+}
+.dot-mech{background:#fff1f1;}
+.dot-civil{background:#e6f1fb;}
+.dot-arch{background:#faeeda;}
+.dot-elec{background:#f3eeff;}
+.dot-proj{background:#eaf3de;}
+.dot-it{background:#e8f8f0;}
+.dot-ai{background:#fce9f5;}
+.l2-name{font-size:13px;font-weight:600;color:var(--text);line-height:1.3;}
+.l2-desc{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4;}
+.l2-hrs{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:1px 6px;border-radius:3px;margin-top:3px;}
+.hrs-mech{background:#fff1f1;color:var(--red);}
+.hrs-civil{background:#e6f1fb;color:#185fa5;}
+.hrs-arch{background:#faeeda;color:#854f0b;}
+.hrs-elec{background:#f3eeff;color:#533ab7;}
+.hrs-proj{background:#eaf3de;color:#3b6d11;}
+.hrs-it{background:#e8f8f0;color:#0f6e56;}
+.hrs-ai{background:#fce9f5;color:#a0369a;}
+
+/* diploma strip at bottom of flyout */
+.l2-diploma{
+  border-top:1px solid var(--border);background:var(--surface);
+  padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.l2-diploma-label{font-size:12px;font-weight:700;color:#533ab7;}
+.l2-diploma-sub{font-size:11px;color:var(--muted);}
+.l2-diploma-link{font-size:12px;font-weight:700;color:var(--red);white-space:nowrap;}
+.l2-diploma-link:hover{text-decoration:underline;}
+
+/* Master programs section in flyout */
+.l2-masters{border-top:1px solid var(--border);padding:8px 6px 6px;}
+.l2-masters-title{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);padding:2px 12px 6px;}
+.l2-masters-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+
+/* Simple dd (non-mega) */
+.dd{position:absolute;top:calc(100% + 6px);left:0;min-width:200px;background:#fff;border:1px solid var(--border);border-top:3px solid var(--red);border-radius:0 0 var(--r) var(--r);padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:all .2s;box-shadow:0 10px 40px rgba(0,0,0,.1);z-index:400;}
+.nav-links>li:hover .dd{opacity:1;pointer-events:all;transform:translateY(0);}
+.dd a{display:block;padding:8px 14px;font-size:13px;font-weight:500;color:var(--muted);border-radius:6px;transition:all .15s;}.dd a:hover{background:var(--light-r);color:var(--red);}
 
 .ticker-wrap{background:var(--red);overflow:hidden;}
 .ticker{display:inline-block;white-space:nowrap;animation:tickerScroll 30s linear infinite;padding:10px 0;font-size:12.5px;font-weight:700;color:#fff;letter-spacing:.3px;}
@@ -59,23 +147,19 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.12);}
 .hero-accent{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--red),var(--orange));}
 .hero-blob{position:absolute;right:-80px;top:-120px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(232,21,27,.07) 0%,transparent 65%);pointer-events:none;}
 .hero-content{position:relative;z-index:2;max-width:820px;}
-
 .hero-kicker{display:inline-flex;align-items:center;gap:10px;background:var(--light-r);border:1px solid rgba(232,21,27,.25);border-radius:4px;padding:5px 14px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin-bottom:22px;animation:fadeUp .5s ease both;}
 .pdot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pdotAnim 2s infinite;}
 @keyframes pdotAnim{0%,100%{opacity:1;}50%{opacity:.3;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-
 .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,7vw,6rem);font-weight:900;text-transform:uppercase;line-height:1.0;letter-spacing:-.5px;color:var(--text);animation:fadeUp .55s .08s ease both;}
 .hero h1 .red{color:var(--red);}
 .hero h1 .outline{-webkit-text-stroke:2.5px var(--red);color:transparent;}
 .hero-sub{font-size:1.05rem;color:var(--muted);max-width:540px;margin:18px 0 34px;line-height:1.8;animation:fadeUp .55s .16s ease both;}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .55s .22s ease both;}
-
 .btn-red{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:700;font-size:15px;padding:13px 28px;border-radius:6px;border:none;cursor:pointer;font-family:'Barlow',sans-serif;transition:all .22s;}
 .btn-red:hover{background:var(--red-dk);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,21,27,.32);}
 .btn-outline-red{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--red);font-weight:700;font-size:15px;padding:12px 26px;border-radius:6px;border:2px solid var(--red);cursor:pointer;font-family:'Barlow',sans-serif;transition:all .22s;}
 .btn-outline-red:hover{background:var(--light-r);}
-
 .hero-stats{display:flex;flex-wrap:wrap;margin-top:52px;padding-top:36px;border-top:1px solid var(--border);animation:fadeUp .55s .30s ease both;}
 .stat-it{padding-right:36px;margin-right:36px;border-right:1px solid var(--border);}
 .stat-it:last-child{border-right:none;margin-right:0;padding-right:0;}
@@ -112,22 +196,52 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.12);}
 .bim-topic h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;}
 .bim-topic p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6;}
 
+/* ═══════════════════════════════════════════
+   COURSES SECTION — TABS + CARDS
+═══════════════════════════════════════════ */
 .tab-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px;}
 .tab-btn{padding:8px 18px;border-radius:4px;font-size:13px;font-weight:700;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;font-family:'Barlow',sans-serif;transition:all .18s;}
 .tab-btn:hover,.tab-btn.active{background:var(--red);border-color:var(--red);color:#fff;}
 .courses-panel{display:none;}
-.courses-panel.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
-.course-card{display:block;background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:26px;transition:all .25s;position:relative;overflow:hidden;cursor:pointer;}
+.courses-panel.active{display:block;}
+
+/* category header inside panel */
+.cat-header{display:flex;align-items:center;gap:12px;margin:0 0 20px;padding-bottom:14px;border-bottom:2px solid var(--border);}
+.cat-icon-big{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.cat-header h3{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;text-transform:uppercase;color:var(--text);line-height:1.1;}
+.cat-header p{font-size:13px;color:var(--muted);}
+
+/* sub-section label */
+.sub-label{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin:28px 0 14px;display:flex;align-items:center;gap:8px;}
+.sub-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.course-card{display:flex;flex-direction:column;background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:20px 22px;transition:all .25s;position:relative;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;}
 .course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
 .course-card:hover{border-color:rgba(232,21,27,.25);transform:translateY(-3px);box-shadow:0 12px 40px rgba(232,21,27,.1);}
 .course-card:hover::before{transform:scaleX(1);}
-.course-icon{font-size:26px;margin-bottom:12px;}
-.course-card h3{font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3;}
-.course-card p{font-size:13px;color:var(--muted);line-height:1.65;}
-.course-dur{display:inline-block;margin-top:12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--light-r);padding:3px 10px;border-radius:3px;}
-.course-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;}
-.ctag{font-size:11px;background:var(--surface);color:var(--muted);padding:3px 9px;border-radius:3px;border:1px solid var(--border);}
-.hot-badge{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:3px;}
+.cc-icon{font-size:22px;margin-bottom:10px;}
+.cc-name{font-size:14.5px;font-weight:700;color:var(--text);margin-bottom:5px;line-height:1.3;}
+.cc-desc{font-size:12.5px;color:var(--muted);line-height:1.6;flex:1;}
+.cc-dur{display:inline-block;margin-top:10px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--red);background:var(--light-r);padding:3px 9px;border-radius:3px;}
+.hot-badge{position:absolute;top:11px;right:11px;background:var(--red);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:3px;}
+
+/* diploma cards — full width */
+.diploma-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:6px;}
+.diploma-card{background:#fff;border:1.5px solid var(--border);border-left:4px solid var(--red);border-radius:var(--r);padding:22px 24px;transition:all .22s;}
+.diploma-card:hover{box-shadow:0 8px 32px rgba(232,21,27,.1);border-color:rgba(232,21,27,.35);}
+.dc-badge{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:3px;margin-bottom:8px;background:#f3eeff;color:#533ab7;}
+.dc-title{font-size:15px;font-weight:800;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.dc-dur{font-size:12px;color:var(--muted);margin-bottom:12px;}
+.dc-covers{display:flex;flex-wrap:wrap;gap:5px;}
+.dc-tag{font-size:11.5px;background:var(--surface);color:var(--muted);padding:3px 9px;border-radius:3px;border:1px solid var(--border);}
+.master-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:6px;}
+.master-card{background:linear-gradient(135deg,#1a2332,#2e4268);color:#fff;border-radius:var(--r);padding:22px 22px;position:relative;overflow:hidden;transition:transform .2s;}
+.master-card:hover{transform:translateY(-3px);}
+.mc-num{position:absolute;bottom:-10px;right:-5px;font-family:'Barlow Condensed',sans-serif;font-size:80px;font-weight:900;color:rgba(255,255,255,.05);line-height:1;pointer-events:none;}
+.mc-ico{font-size:22px;margin-bottom:10px;}
+.mc-title{font-size:14px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:4px;}
+.mc-dur{font-size:11.5px;color:rgba(255,255,255,.5);}
 
 .prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;}
 .prog-card{border-radius:var(--r);padding:30px 24px;position:relative;overflow:hidden;color:#fff;}
@@ -203,8 +317,8 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
 .vbadge{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:6px 14px;font-weight:600;}
 .vbadge span{color:var(--red);}
 
-@media(max-width:900px){.bim-inner,.contact-grid{grid-template-columns:1fr;gap:36px;}.footer-top{grid-template-columns:1fr 1fr;}.form-row{grid-template-columns:1fr;}.tb-l{display:none;}}
-@media(max-width:640px){.footer-top{grid-template-columns:1fr;}.hero h1{font-size:2.8rem;}.hero-stats{flex-direction:column;gap:16px;}.stat-it{border-right:none;padding-right:0;margin-right:0;padding-bottom:14px;border-bottom:1px solid var(--border);}.stat-it:last-child{border-bottom:none;padding-bottom:0;}}
+@media(max-width:900px){.bim-inner,.contact-grid{grid-template-columns:1fr;gap:36px;}.footer-top{grid-template-columns:1fr 1fr;}.form-row{grid-template-columns:1fr;}.tb-l{display:none;}.mega-l2{display:none!important;}}
+@media(max-width:640px){.footer-top{grid-template-columns:1fr;}.hero h1{font-size:2.8rem;}.hero-stats{flex-direction:column;gap:16px;}.stat-it{border-right:none;padding-right:0;margin-right:0;padding-bottom:14px;border-bottom:1px solid var(--border);}.stat-it:last-child{border-bottom:none;padding-bottom:0;}.mega-l1{display:none!important;}}
 </style>
 </head>
 <body>
@@ -229,46 +343,190 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════ NAV ═══ -->
 <nav id="navbar">
   <div class="nav-logo">
-    <!--
-      CADD Centre official logo — recreated as inline SVG matching exact brand:
-      Red double-chevron mark + "CADD" bold wordmark + "CENTRE" in red tracking
-    -->
     <svg viewBox="0 0 310 56" xmlns="http://www.w3.org/2000/svg" aria-label="CADD Centre Training Services">
-      <!-- Double chevron brand mark -->
       <polygon points="0,6  20,6  32,28 20,50  0,50  12,28" fill="#e8151b"/>
       <polygon points="16,6 36,6  48,28 36,50 16,50  28,28" fill="#c01015" opacity=".7"/>
-      <!-- CADD wordmark -->
       <text x="56" y="37" font-family="'Barlow Condensed',Arial Narrow,Impact,sans-serif" font-weight="900" font-size="34" fill="#1a2332" letter-spacing="1">CADD</text>
-      <!-- CENTRE tracking word -->
       <text x="57" y="51" font-family="'Barlow','Arial',sans-serif" font-weight="700" font-size="12" fill="#e8151b" letter-spacing="5.5">CENTRE</text>
-      <!-- ® mark -->
       <text x="157" y="22" font-family="Arial,sans-serif" font-size="10" fill="#1a2332" font-weight="400">®</text>
-      <!-- Training Services sub-line -->
       <text x="57" y="60" font-family="'Barlow','Arial',sans-serif" font-size="8" fill="#8595ae" letter-spacing="1">TRAINING SERVICES</text>
     </svg>
   </div>
 
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
+
+    <!-- COURSES mega nav -->
     <li>
       <a href="#courses">Courses ▾</a>
-      <div class="dd">
-        <div class="dd-sec">AEC / BIM</div>
-        <a href="bim.html">🏗️ BIM – Executive Diploma</a>
-        <a href="architecture.html">Civil & Architecture</a>
-        <a href="architecture.html#revit-mep">Revit Architecture / MEP</a>
-        <div class="dd-sec">Product Design</div>
-        <a href="mechanical.html#mechanical-cadd">Mechanical CADD</a>
-        <a href="mechanical.html#solidworks-catia-ansys">SolidWorks / CATIA / ANSYS</a>
-        <div class="dd-sec">Information Technology</div>
-        <a href="it-cs.html#python">Python / Data Analytics / Java</a>
-        <a href="it-cs.html#ethical-hacking-iot">Ethical Hacking / IoT</a>
-        <div class="dd-sec">AI-Powered New</div>
-        <a href="ai.html">AI Smart Design Courses</a>
+      <div class="mega-l1">
+
+        <!-- 1. Mechanical CADD -->
+        <div class="l1-row">
+          <span><span class="l1-ico">⚙️</span>Mechanical CADD</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">⚙️ Mechanical &amp; Product Design</div><div class="l2-head-sub">Product design, manufacturing &amp; simulation</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_mech')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="mechanical.html#autocad"><div class="l2-dot dot-mech">📐</div><div><div class="l2-name">AutoCAD (2D &amp; 3D)</div><div class="l2-desc">2D drafting &amp; 3D solid modelling</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#solidworks"><div class="l2-dot dot-mech">🔩</div><div><div class="l2-name">SolidWorks</div><div class="l2-desc">Parts, assemblies, sheet metal, weldments</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#catia"><div class="l2-dot dot-mech">✈️</div><div><div class="l2-name">CATIA</div><div class="l2-desc">Advanced surfacing &amp; parametric design</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#creo"><div class="l2-dot dot-mech">🛠️</div><div><div class="l2-name">Creo (Pro-E)</div><div class="l2-desc">3D product design &amp; CNC manufacturing</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#nx"><div class="l2-dot dot-mech">🖥️</div><div><div class="l2-name">Siemens NX</div><div class="l2-desc">Synchronous modelling &amp; assembly</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#inventor"><div class="l2-dot dot-mech">⚙️</div><div><div class="l2-name">Inventor</div><div class="l2-desc">Parametric 3D &amp; mechanical simulation</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#ansys"><div class="l2-dot dot-mech">🔬</div><div><div class="l2-name">Ansys (CAE / FEA)</div><div class="l2-desc">Structural, thermal &amp; dynamic simulation</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#hypermesh"><div class="l2-dot dot-mech">🧩</div><div><div class="l2-name">HyperMesh</div><div class="l2-desc">Advanced meshing &amp; CAE pre-processing</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#gdt"><div class="l2-dot dot-mech">📏</div><div><div class="l2-name">GD&amp;T</div><div class="l2-desc">Geometric Dimensioning &amp; Tolerancing</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+              <a class="l2-item" href="mechanical.html#cnc"><div class="l2-dot dot-mech">🏭</div><div><div class="l2-name">CNC Programming / CAM</div><div class="l2-desc">G-code, CAM strategies &amp; simulation</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+              <a class="l2-item" href="mechanical.html#matlab"><div class="l2-dot dot-mech">📊</div><div><div class="l2-name">MATLAB</div><div class="l2-desc">Engineering computation &amp; simulation</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+              <a class="l2-item" href="mechanical.html#mastercam"><div class="l2-dot dot-mech">🔧</div><div><div class="l2-name">MasterCAM</div><div class="l2-desc">CAM software for CNC machining</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+            </div>
+            <div class="l2-diploma">
+              <div><div class="l2-diploma-label">🏆 Executive Diploma in Product Design — ~410 hrs</div><div class="l2-diploma-sub">SolidWorks / CATIA / Creo + ANSYS + GD&amp;T + Manufacturing</div></div>
+              <a class="l2-diploma-link" href="mechanical.html#diploma">View Program →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Civil / Construction -->
+        <div class="l1-row">
+          <span><span class="l1-ico">🏗️</span>Civil / Construction</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">🏗️ Civil &amp; Construction Design</div><div class="l2-head-sub">For civil engineers &amp; site professionals</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_civil')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="architecture.html#autocad-civil"><div class="l2-dot dot-civil">📐</div><div><div class="l2-name">AutoCAD Civil</div><div class="l2-desc">2D site plans &amp; civil drafting</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#civil3d"><div class="l2-dot dot-civil">🛣️</div><div><div class="l2-name">AutoCAD Civil 3D</div><div class="l2-desc">Grading, corridors &amp; pipe networks</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#staad"><div class="l2-dot dot-civil">🏗️</div><div><div class="l2-name">STAAD.Pro</div><div class="l2-desc">Structural analysis — buildings &amp; bridges</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#etabs"><div class="l2-dot dot-civil">🏢</div><div><div class="l2-name">ETABS</div><div class="l2-desc">Multi-storey building analysis &amp; seismic</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#revit-structure"><div class="l2-dot dot-civil">🧱</div><div><div class="l2-name">Revit Structure</div><div class="l2-desc">BIM-based structural modelling</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#mxroad"><div class="l2-dot dot-civil">🛤️</div><div><div class="l2-name">MX Road</div><div class="l2-desc">Highway design &amp; road alignment</div><span class="l2-hrs hrs-civil">Short</span></div></a>
+              <a class="l2-item" href="architecture.html#revit-arch"><div class="l2-dot dot-civil">🏛️</div><div><div class="l2-name">Revit Architecture</div><div class="l2-desc">BIM-based architectural design</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+            </div>
+            <div class="l2-diploma">
+              <div><div class="l2-diploma-label">🏆 Executive Diploma in Structural Design — ~400 hrs</div><div class="l2-diploma-sub">STAAD.Pro + ETABS + Structural Analysis + RCC &amp; Steel Design</div></div>
+              <a class="l2-diploma-link" href="architecture.html#diploma-structural">View Program →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Architecture & Interior -->
+        <div class="l1-row">
+          <span><span class="l1-ico">🏛️</span>Architecture &amp; Interior</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">🏛️ Architecture &amp; Interior Design</div><div class="l2-head-sub">For architects, designers &amp; visualization artists</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_arch')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="architecture.html#autocad-arch"><div class="l2-dot dot-arch">📐</div><div><div class="l2-name">AutoCAD Architecture</div><div class="l2-desc">Floor plans, elevations &amp; sections</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#revit-arch"><div class="l2-dot dot-arch">🏛️</div><div><div class="l2-name">Revit Architecture (BIM)</div><div class="l2-desc">BIM-based architectural design &amp; docs</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#sketchup"><div class="l2-dot dot-arch">🎨</div><div><div class="l2-name">SketchUp</div><div class="l2-desc">Concept modelling &amp; quick 3D design</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#3dsmax"><div class="l2-dot dot-arch">🖼️</div><div><div class="l2-name">3ds Max</div><div class="l2-desc">Interior/exterior 3D modelling</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#vray"><div class="l2-dot dot-arch">✨</div><div><div class="l2-name">V-Ray Rendering</div><div class="l2-desc">Photorealistic renders &amp; walkthroughs</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#lumion"><div class="l2-dot dot-arch">🌿</div><div><div class="l2-name">Lumion</div><div class="l2-desc">Real-time 3D rendering &amp; animation</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+            </div>
+            <div class="l2-diploma">
+              <div><div class="l2-diploma-label">🏆 Executive Diploma in Interior Design — ~440 hrs</div><div class="l2-diploma-sub">AutoCAD + SketchUp + 3ds Max + V-Ray + Interior Planning</div></div>
+              <a class="l2-diploma-link" href="architecture.html#diploma-interior">View Program →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Electrical & MEP -->
+        <div class="l1-row">
+          <span><span class="l1-ico">⚡</span>Electrical &amp; MEP</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">⚡ Electrical &amp; MEP Courses</div><div class="l2-head-sub">For electrical engineers &amp; building services</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_elec')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="electrical.html#eleccad"><div class="l2-dot dot-elec">⚡</div><div><div class="l2-name">Electrical CAD</div><div class="l2-desc">Electrical diagrams, schematics &amp; panel layouts</div><span class="l2-hrs hrs-elec">80 hrs</span></div></a>
+              <a class="l2-item" href="electrical.html#revit-mep"><div class="l2-dot dot-elec">🏭</div><div><div class="l2-name">Revit MEP</div><div class="l2-desc">HVAC, electrical &amp; plumbing BIM design</div><span class="l2-hrs hrs-elec">80 hrs</span></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Project Planning -->
+        <div class="l1-row">
+          <span><span class="l1-ico">📊</span>Project Planning</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">📊 Project Planning &amp; Management</div><div class="l2-head-sub">Industry-standard project scheduling tools</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_proj')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-proj">📅</div><div><div class="l2-name">Microsoft Project</div><div class="l2-desc">Project scheduling, tracking &amp; reporting</div><span class="l2-hrs hrs-proj">Short</span></div></a>
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-proj">🏗️</div><div><div class="l2-name">Primavera P6</div><div class="l2-desc">Enterprise project management for construction</div><span class="l2-hrs hrs-proj">Short</span></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. IT Courses -->
+        <div class="l1-row">
+          <span><span class="l1-ico">💻</span>IT Courses</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">💻 Information Technology Courses</div><div class="l2-head-sub">Programming &amp; emerging technologies</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_it')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="it-cs.html#c"><div class="l2-dot dot-it">🖥️</div><div><div class="l2-name">C Programming</div><div class="l2-desc">Fundamentals, pointers &amp; data structures</div><span class="l2-hrs hrs-it">Short</span></div></a>
+              <a class="l2-item" href="it-cs.html#cpp"><div class="l2-dot dot-it">⚡</div><div><div class="l2-name">C++ Programming</div><div class="l2-desc">OOP, STL &amp; application development</div><span class="l2-hrs hrs-it">Short</span></div></a>
+              <a class="l2-item" href="it-cs.html#python"><div class="l2-dot dot-it">🐍</div><div><div class="l2-name">Python</div><div class="l2-desc">Automation, OOP &amp; real-world applications</div><span class="l2-hrs hrs-it">80 hrs</span></div></a>
+              <a class="l2-item" href="it-cs.html#iot"><div class="l2-dot dot-it">🌐</div><div><div class="l2-name">IoT — Internet of Things</div><div class="l2-desc">Raspberry Pi, cloud &amp; IoT protocols</div><span class="l2-hrs hrs-it">80 hrs</span></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Master & Diploma Programs -->
+        <div class="l1-row">
+          <span><span class="l1-ico">🏆</span>Master &amp; Diploma Programs</span><span class="l1-arr">›</span>
+          <div class="mega-l2" style="min-width:620px;">
+            <div class="l2-head">
+              <div><div class="l2-head-title">🏆 Master Certificates &amp; Executive Diplomas</div><div class="l2-head-sub">Job-oriented combo programs — 240 to 440 hours</div></div>
+              <a href="#contact" class="l2-enq">Enquire →</a>
+            </div>
+            <div class="l2-masters-title" style="padding:10px 18px 2px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);">Master Certificates — 240 hrs</div>
+            <div class="l2-grid" style="padding:4px 6px 0;">
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-mech">⚙️</div><div><div class="l2-name">Master Cert. in Product Design with AI</div><span class="l2-hrs hrs-mech">240 hrs</span></div></a>
+              <a class="l2-item" href="bim.html"><div class="l2-dot dot-civil">🏗️</div><div><div class="l2-name">Master Cert. in Building Design (BIM)</div><span class="l2-hrs hrs-civil">240 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html"><div class="l2-dot dot-arch">🛋️</div><div><div class="l2-name">Master Cert. in Interior Design</div><span class="l2-hrs hrs-arch">240 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html"><div class="l2-dot dot-mech">🔩</div><div><div class="l2-name">Master Cert. in Mechanical CAD/CAM/CAE</div><span class="l2-hrs hrs-mech">240 hrs</span></div></a>
+              <a class="l2-item" href="electrical.html"><div class="l2-dot dot-elec">⚡</div><div><div class="l2-name">Master Cert. in MEP Design</div><span class="l2-hrs hrs-elec">240 hrs</span></div></a>
+              <a class="l2-item" href="bim.html"><div class="l2-dot dot-civil">🏢</div><div><div class="l2-name">Master Cert. in BIM</div><span class="l2-hrs hrs-civil">240 hrs</span></div></a>
+            </div>
+            <div style="border-top:1px solid var(--border);padding:8px 18px 4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);">Executive Diplomas — 400–440 hrs</div>
+            <div class="l2-grid" style="padding:4px 6px 6px;">
+              <a class="l2-item" href="mechanical.html#diploma"><div class="l2-dot dot-mech">⚙️</div><div><div class="l2-name">Exec. Diploma in Product Design</div><span class="l2-hrs hrs-mech">~410 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#diploma-arch"><div class="l2-dot dot-arch">🏛️</div><div><div class="l2-name">Exec. Diploma in Architectural Design</div><span class="l2-hrs hrs-arch">~400 hrs</span></div></a>
+              <a class="l2-item" href="bim.html"><div class="l2-dot dot-civil">🏗️</div><div><div class="l2-name">Exec. Diploma in BIM</div><span class="l2-hrs hrs-civil">400–440 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#diploma-structural"><div class="l2-dot dot-civil">🧱</div><div><div class="l2-name">Exec. Diploma in Structural Design</div><span class="l2-hrs hrs-civil">~400 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#diploma-interior"><div class="l2-dot dot-arch">🛋️</div><div><div class="l2-name">Exec. Diploma in Interior Design</div><span class="l2-hrs hrs-arch">~440 hrs</span></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BIM quick link -->
+        <div style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px;">
+          <a class="l1-row" href="bim.html" style="color:var(--red);">
+            <span>🔥 Executive Diploma in BIM — Most Popular</span>
+            <span style="font-size:10px;background:var(--red);color:#fff;padding:1px 6px;border-radius:3px;font-size:9.5px;">HOT</span>
+          </a>
+        </div>
+
       </div>
     </li>
+    <!-- end Courses -->
+
     <li><a href="bim.html">BIM</a></li>
     <li><a href="#why-us">Why Us</a></li>
     <li><a href="#reviews">Reviews</a></li>
@@ -284,6 +542,7 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
   </div>
 </div>
 
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-accent"></div>
   <div class="hero-blob"></div>
@@ -305,6 +564,7 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
   </div>
 </section>
 
+<!-- BIM FEATURED -->
 <section class="bim-section" id="bim">
   <div class="bim-inner">
     <div>
@@ -335,65 +595,257 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════
+     COURSES SECTION
+═══════════════════════════════════════════ -->
 <section class="sec sec-gray" id="courses">
   <div class="kicker">Our Programs</div>
   <h2 class="sec-title">Industry-Ready <span class="red">Courses</span></h2>
   <p class="sec-sub">All certifications carry CADD Centre's globally recognized credential — verifiable online and accepted by top employers in 40+ countries.</p>
+
   <div class="tab-row">
-    <button class="tab-btn active" onclick="showTab('aec',this)">🏗️ AEC / BIM</button>
-    <button class="tab-btn" onclick="showTab('mech',this)">⚙️ Mechanical</button>
-    <button class="tab-btn" onclick="showTab('it',this)">💻 IT & CS</button>
-    <button class="tab-btn" onclick="showTab('elec',this)">⚡ Electrical</button>
-    <button class="tab-btn" onclick="showTab('ai',this)">🤖 AI-Powered</button>
+    <button class="tab-btn active"  onclick="showTab('mech',this)">⚙️ Mechanical</button>
+    <button class="tab-btn" onclick="showTab('civil',this)">🏗️ Civil</button>
+    <button class="tab-btn" onclick="showTab('arch',this)">🏛️ Architecture &amp; Interior</button>
+    <button class="tab-btn" onclick="showTab('elec',this)">⚡ Electrical &amp; MEP</button>
+    <button class="tab-btn" onclick="showTab('proj',this)">📊 Project Planning</button>
+    <button class="tab-btn" onclick="showTab('it',this)">💻 IT</button>
+    <button class="tab-btn" onclick="showTab('masters',this)">🏆 Master &amp; Diploma</button>
   </div>
-  <div class="courses-panel active" id="tab-aec">
-    <a href="bim.html" class="course-card"><span class="hot-badge">HOT</span><div class="course-icon">🏗️</div><h3>Executive Diploma in BIM</h3><p>Comprehensive BIM — Revit Architecture, Structure, MEP, Navisworks 5D, BIM 360 and ISO 19650.</p><span class="course-dur">400 Hours</span><div class="course-tags"><span class="ctag">Revit</span><span class="ctag">Navisworks</span><span class="ctag">BIM 360</span></div></a>
-    <a href="architecture.html" class="course-card"><div class="course-icon">🏛️</div><h3>Master Certificate in Architecture Design</h3><p>AutoCAD, Revit Architecture, SketchUp and 3ds Max for complete architectural design and visualization.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD</span><span class="ctag">Revit</span><span class="ctag">3ds Max</span></div></a>
-    <a href="architecture.html#building-design" class="course-card"><div class="course-icon">🏢</div><h3>Master Certificate in Building Design</h3><p>End-to-end building design from 2D drafting to 3D modelling, structural analysis and documentation.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD Civil</span><span class="ctag">STAAD.Pro</span><span class="ctag">ETABS</span></div></a>
-    <a href="architecture.html#revit-mep" class="course-card"><div class="course-icon">🔧</div><h3>Revit MEP Design</h3><p>Design HVAC, Electrical, Plumbing & Fire-fighting systems using Revit MEP for industrial and residential buildings.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Revit MEP</span><span class="ctag">HVAC</span><span class="ctag">Plumbing</span></div></a>
-    <a href="architecture.html#staad-pro" class="course-card"><div class="course-icon">📐</div><h3>STAAD.Pro — Structural Analysis</h3><p>Structural analysis for buildings, bridges and industrial structures with RC and steel design.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">STAAD.Pro</span><span class="ctag">RC Design</span><span class="ctag">Steel</span></div></a>
-    <a href="architecture.html#visualization" class="course-card"><div class="course-icon">🎨</div><h3>3ds Max + V-Ray Visualization</h3><p>Architectural visualization — interior/exterior modelling, photorealistic V-Ray rendering and walkthroughs.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">3ds Max</span><span class="ctag">V-Ray</span><span class="ctag">Animation</span></div></a>
+
+  <!-- ── MECHANICAL ── -->
+  <div class="courses-panel active" id="tab-mech">
+    <div class="cat-header">
+      <div class="cat-icon-big" style="background:#fff1f1;">⚙️</div>
+      <div><h3>Mechanical CADD <span class="red">Courses</span></h3><p>Focused on product design, manufacturing and simulation</p></div>
+    </div>
+    <div class="sub-label">Core Software Courses</div>
+    <div class="course-grid">
+      <a class="course-card" href="mechanical.html#autocad"><div class="cc-icon">📐</div><div class="cc-name">AutoCAD (2D &amp; 3D)</div><div class="cc-desc">2D drafting, 3D solid modelling and engineering drawing creation for mechanical design.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#solidworks"><div class="cc-icon">🔩</div><div class="cc-name">SolidWorks</div><div class="cc-desc">Part modelling, assembly, surface, sheet metal, weldment design and photorealistic visualization.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#catia"><div class="cc-icon">✈️</div><div class="cc-name">CATIA</div><div class="cc-desc">Advanced surfacing, assembly design and 3D modelling for complex products and aerospace parts.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#creo"><div class="cc-icon">🛠️</div><div class="cc-name">Creo (Pro-E)</div><div class="cc-desc">Complete 3D digital models for FEA, rapid prototyping, tool design and CNC manufacturing.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#nx"><div class="cc-icon">🖥️</div><div class="cc-name">Siemens NX</div><div class="cc-desc">High-performance modelling, drafting and assembly design using NX's synchronous modelling toolset.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#inventor"><div class="cc-icon">⚙️</div><div class="cc-name">Inventor</div><div class="cc-desc">Parametric 3D design, mechanical simulation and detailed engineering documentation.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#ansys"><div class="cc-icon">🔬</div><div class="cc-name">Ansys (CAE)</div><div class="cc-desc">Structural, modal, fatigue, thermal and finite element analysis with advanced materials modelling.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#hypermesh"><div class="cc-icon">🧩</div><div class="cc-name">HyperMesh</div><div class="cc-desc">Advanced meshing and pre-processing for CAE simulation — used in automotive and aerospace.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#gdt"><div class="cc-icon">📏</div><div class="cc-name">GD&amp;T</div><div class="cc-desc">Geometric Dimensioning &amp; Tolerancing — essential for manufacturing and quality engineering roles.</div><span class="cc-dur">Short Course</span></a>
+      <a class="course-card" href="mechanical.html#cnc"><div class="cc-icon">🏭</div><div class="cc-name">CNC Programming / CAM</div><div class="cc-desc">G-code programming, CAM strategies and machining simulation for CNC manufacturing.</div><span class="cc-dur">Short Course</span></a>
+      <a class="course-card" href="mechanical.html#matlab"><div class="cc-icon">📊</div><div class="cc-name">MATLAB</div><div class="cc-desc">Engineering computation, signal processing, simulation and matrix-based programming.</div><span class="cc-dur">Short Course</span></a>
+      <a class="course-card" href="mechanical.html#mastercam"><div class="cc-icon">🔧</div><div class="cc-name">MasterCAM</div><div class="cc-desc">Industry-leading CAM software for CNC machining, toolpath creation and manufacturing automation.</div><span class="cc-dur">Short Course</span></a>
+    </div>
+    <div class="sub-label">Executive Diploma Program</div>
+    <div class="diploma-grid">
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · ~410 Hours</span>
+        <div class="dc-title">Executive Diploma in Product Design</div>
+        <div class="dc-dur">Comprehensive career-defining program for product designers</div>
+        <div class="dc-covers"><span class="dc-tag">SolidWorks / CATIA / Creo</span><span class="dc-tag">ANSYS basics</span><span class="dc-tag">GD&amp;T</span><span class="dc-tag">Manufacturing concepts</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Master Certificate · ~240 Hours</span>
+        <div class="dc-title">Master Certificate in Product Design with AI</div>
+        <div class="dc-dur">AutoCAD + SolidWorks/CATIA + AI-powered design tools</div>
+        <div class="dc-covers"><span class="dc-tag">AutoCAD</span><span class="dc-tag">SolidWorks</span><span class="dc-tag">CATIA</span><span class="dc-tag">Generative AI</span></div>
+      </div>
+    </div>
   </div>
-  <div class="courses-panel" id="tab-mech">
-    <a href="mechanical.html" class="course-card"><div class="course-icon">⚙️</div><h3>Master Certificate in Product Design</h3><p>AutoCAD Mechanical, SolidWorks, CATIA — complete product development curriculum.</p><span class="course-dur">160 Hours</span><div class="course-tags"><span class="ctag">AutoCAD</span><span class="ctag">SolidWorks</span><span class="ctag">CATIA</span></div></a>
-    <a href="mechanical.html#solidworks" class="course-card"><div class="course-icon">🔩</div><h3>SolidWorks — Proficient</h3><p>Part modelling, assembly, surface, sheet metal, weldment design and model visualisation using SolidWorks.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Modelling</span><span class="ctag">Assembly</span><span class="ctag">Sheet Metal</span></div></a>
-    <a href="mechanical.html#catia" class="course-card"><div class="course-icon">✈️</div><h3>CATIA — Proficient</h3><p>Solids, surfaces, assemblies and analysis with CATIA's powerful parametric modelling tools.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Design</span><span class="ctag">GSD</span><span class="ctag">Assembly</span></div></a>
-    <a href="mechanical.html#ansys" class="course-card"><div class="course-icon">🔬</div><h3>ANSYS — FEA & Analysis</h3><p>Structural, modal, fatigue, thermal and finite element analysis with advanced materials modelling.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Static Analysis</span><span class="ctag">FEA</span><span class="ctag">Thermal</span></div></a>
-    <a href="mechanical.html#creo" class="course-card"><div class="course-icon">🛠️</div><h3>Creo — 3D Product Design</h3><p>Complete 3D digital models for FEA, rapid prototyping, tool design and CNC manufacturing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Part Modelling</span><span class="ctag">Surface</span><span class="ctag">Sheet Metal</span></div></a>
-    <a href="mechanical.html#nx" class="course-card"><div class="course-icon">🖥️</div><h3>NX CAD</h3><p>High-performance modelling, drafting and assembly design using NX's synchronous modelling toolset.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Sketch</span><span class="ctag">Assembly</span><span class="ctag">Free Form</span></div></a>
+
+  <!-- ── CIVIL ── -->
+  <div class="courses-panel" id="tab-civil">
+    <div class="cat-header">
+      <div class="cat-icon-big" style="background:#e6f1fb;">🏗️</div>
+      <div><h3>Civil / Construction <span class="red">Courses</span></h3><p>For civil engineers and site professionals</p></div>
+    </div>
+    <div class="sub-label">Core Software Courses</div>
+    <div class="course-grid">
+      <a class="course-card" href="architecture.html#autocad-civil"><div class="cc-icon">📐</div><div class="cc-name">AutoCAD Civil</div><div class="cc-desc">2D site plans, layouts and civil drafting for engineers and site professionals.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#civil3d"><div class="cc-icon">🛣️</div><div class="cc-name">AutoCAD Civil 3D</div><div class="cc-desc">Grading, corridors, pipe networks and survey data management for civil projects.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#staad"><div class="cc-icon">🏗️</div><div class="cc-name">STAAD.Pro</div><div class="cc-desc">Structural analysis for buildings, bridges and industrial structures with RC and steel design.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#etabs"><div class="cc-icon">🏢</div><div class="cc-name">ETABS</div><div class="cc-desc">Multi-storey building analysis, seismic load design and structural documentation.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#revit-structure"><div class="cc-icon">🧱</div><div class="cc-name">Revit Structure</div><div class="cc-desc">BIM-based structural modelling, framing and construction documentation.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#mxroad"><div class="cc-icon">🛤️</div><div class="cc-name">MX Road</div><div class="cc-desc">Highway design, road alignment and cross-section modelling for civil engineers.</div><span class="cc-dur">Short Course</span></a>
+      <a class="course-card" href="architecture.html#revit-arch"><div class="cc-icon">🏛️</div><div class="cc-name">Revit Architecture</div><div class="cc-desc">BIM-based architectural design and documentation for building projects.</div><span class="cc-dur">80 Hours</span></a>
+    </div>
+    <div class="sub-label">Executive Diploma Programs</div>
+    <div class="diploma-grid">
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · ~400 Hours</span>
+        <div class="dc-title">Executive Diploma in Structural Design</div>
+        <div class="dc-dur">Comprehensive structural analysis for professional civil engineers</div>
+        <div class="dc-covers"><span class="dc-tag">STAAD.Pro</span><span class="dc-tag">ETABS</span><span class="dc-tag">Structural Analysis</span><span class="dc-tag">RCC &amp; Steel Design</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · 400–440 Hours</span>
+        <div class="dc-title">Executive Diploma in BIM</div>
+        <div class="dc-dur">Revit Architecture + Structure + MEP + BIM workflow + ISO 19650</div>
+        <div class="dc-covers"><span class="dc-tag">Revit Arch</span><span class="dc-tag">Revit Structure</span><span class="dc-tag">Revit MEP</span><span class="dc-tag">BIM 360</span><span class="dc-tag">ISO 19650</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Master Certificate · ~240 Hours</span>
+        <div class="dc-title">Master Certificate in Building Design (BIM)</div>
+        <div class="dc-dur">End-to-end building design from 2D drafting to 3D modelling</div>
+        <div class="dc-covers"><span class="dc-tag">AutoCAD Civil</span><span class="dc-tag">STAAD.Pro</span><span class="dc-tag">ETABS</span><span class="dc-tag">Revit</span></div>
+      </div>
+    </div>
   </div>
-  <div class="courses-panel" id="tab-it">
-    <a href="it-cs.html#python" class="course-card"><div class="course-icon">🐍</div><h3>Python for Professionals</h3><p>Data structures, automation, OOP and real-world Python applications for industry use.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Python</span><span class="ctag">OOP</span><span class="ctag">Automation</span></div></a>
-    <a href="it-cs.html#data-analytics" class="course-card"><div class="course-icon">📊</div><h3>Data Analytics for Professionals</h3><p>Data analysis, visualization and reporting tools used by professionals across industries worldwide.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Excel</span><span class="ctag">Python</span><span class="ctag">Data Viz</span></div></a>
-    <a href="it-cs.html#java" class="course-card"><div class="course-icon">☕</div><h3>Java for Professionals</h3><p>Object-oriented Java programming for web apps, desktop and enterprise software development.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">OOP</span><span class="ctag">Web Apps</span><span class="ctag">Data Structures</span></div></a>
-    <a href="it-cs.html#ethical-hacking" class="course-card"><div class="course-icon">🔐</div><h3>Ethical Hacking</h3><p>Detecting vulnerabilities in applications, systems and IT infrastructure. Network security and penetration testing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Network Security</span><span class="ctag">Pen Testing</span></div></a>
-    <a href="it-cs.html#iot" class="course-card"><div class="course-icon">🌐</div><h3>IoT — Internet of Things</h3><p>Connect devices with sensors and software using Raspberry Pi, cloud computing and IoT protocols.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Raspberry Pi</span><span class="ctag">Cloud</span><span class="ctag">IoT Protocols</span></div></a>
-    <a href="it-cs.html#robotics" class="course-card"><div class="course-icon">🤖</div><h3>Robotics Design</h3><p>Hardware to software using Arduino prototyping platforms to create robots and interactive electronics.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Arduino</span><span class="ctag">Sensors</span><span class="ctag">Motors</span></div></a>
+
+  <!-- ── ARCHITECTURE & INTERIOR ── -->
+  <div class="courses-panel" id="tab-arch">
+    <div class="cat-header">
+      <div class="cat-icon-big" style="background:#faeeda;">🏛️</div>
+      <div><h3>Architecture &amp; Interior <span class="red">Courses</span></h3><p>For architects and interior designers</p></div>
+    </div>
+    <div class="sub-label">Core Software Courses</div>
+    <div class="course-grid">
+      <a class="course-card" href="architecture.html#autocad-arch"><div class="cc-icon">📐</div><div class="cc-name">AutoCAD Architecture</div><div class="cc-desc">Floor plans, elevations, sections and architectural drawing production.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#revit-arch"><div class="cc-icon">🏛️</div><div class="cc-name">Revit Architecture (BIM)</div><div class="cc-desc">BIM-based architectural design — from concept to construction documentation.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#sketchup"><div class="cc-icon">🎨</div><div class="cc-name">SketchUp</div><div class="cc-desc">Fast concept modelling, 3D space design and client presentation visuals.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#3dsmax"><div class="cc-icon">🖼️</div><div class="cc-name">3ds Max</div><div class="cc-desc">Interior and exterior 3D modelling, animation and architectural visualization.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#vray"><div class="cc-icon">✨</div><div class="cc-name">V-Ray Rendering</div><div class="cc-desc">Photorealistic renders, lighting simulation and architectural walkthroughs.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="architecture.html#lumion"><div class="cc-icon">🌿</div><div class="cc-name">Lumion</div><div class="cc-desc">Real-time 3D rendering and animated walkthroughs for architecture and interior design.</div><span class="cc-dur">80 Hours</span></a>
+    </div>
+    <div class="sub-label">Executive Diploma Programs</div>
+    <div class="diploma-grid">
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · ~400 Hours</span>
+        <div class="dc-title">Executive Diploma in Architectural Design</div>
+        <div class="dc-dur">Complete architectural design from 2D to photorealistic 3D</div>
+        <div class="dc-covers"><span class="dc-tag">AutoCAD Architecture</span><span class="dc-tag">Revit Architecture</span><span class="dc-tag">SketchUp</span><span class="dc-tag">3ds Max + V-Ray</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · ~440 Hours</span>
+        <div class="dc-title">Executive Diploma in Interior Design</div>
+        <div class="dc-dur">End-to-end interior design from planning to photorealistic presentation</div>
+        <div class="dc-covers"><span class="dc-tag">AutoCAD</span><span class="dc-tag">SketchUp</span><span class="dc-tag">3ds Max + V-Ray</span><span class="dc-tag">Interior Planning</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Master Certificate · ~240 Hours</span>
+        <div class="dc-title">Master Certificate in Interior Design</div>
+        <div class="dc-dur">Core interior design tools and space planning</div>
+        <div class="dc-covers"><span class="dc-tag">AutoCAD</span><span class="dc-tag">SketchUp</span><span class="dc-tag">3ds Max</span><span class="dc-tag">V-Ray</span></div>
+      </div>
+    </div>
   </div>
+
+  <!-- ── ELECTRICAL & MEP ── -->
   <div class="courses-panel" id="tab-elec">
-    <a href="electrical.html#autocad-electrical" class="course-card"><div class="course-icon">⚡</div><h3>AutoCAD Electrical</h3><p>Electrical and electronic diagrams, schematics, control circuits and panel layouts.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Schematics</span><span class="ctag">Panel</span><span class="ctag">BOM</span></div></a>
-    <a href="electrical.html#plc-scada" class="course-card"><div class="course-icon">🏭</div><h3>PLC / SCADA</h3><p>Industrial automation — PLC programming, SCADA systems and process control for manufacturing.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">PLC</span><span class="ctag">SCADA</span><span class="ctag">Automation</span></div></a>
-    <a href="electrical.html#embedded-systems" class="course-card"><div class="course-icon">💻</div><h3>Embedded Systems</h3><p>Embedded systems design, microcontroller programming and hardware-software integration.</p><span class="course-dur">80 Hours</span><div class="course-tags"><span class="ctag">Microcontroller</span><span class="ctag">C/C++</span><span class="ctag">RTOS</span></div></a>
+    <div class="cat-header">
+      <div class="cat-icon-big" style="background:#f3eeff;">⚡</div>
+      <div><h3>Electrical &amp; MEP <span class="red">Courses</span></h3><p>For electrical engineers and building services professionals</p></div>
+    </div>
+    <div class="sub-label">Core Software Courses</div>
+    <div class="course-grid">
+      <a class="course-card" href="electrical.html#eleccad"><div class="cc-icon">⚡</div><div class="cc-name">Electrical CAD</div><div class="cc-desc">Electrical and electronic diagrams, schematics, control circuits and panel layouts.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="electrical.html#revit-mep"><div class="cc-icon">🏭</div><div class="cc-name">Revit MEP</div><div class="cc-desc">Design HVAC, Electrical, Plumbing and Fire-fighting systems using Revit MEP.</div><span class="cc-dur">80 Hours</span></a>
+    </div>
+    <div class="sub-label">Diploma Program</div>
+    <div class="diploma-grid">
+      <div class="diploma-card">
+        <span class="dc-badge">Master Certificate · ~240 Hours</span>
+        <div class="dc-title">Master Certificate in MEP Design</div>
+        <div class="dc-dur">Complete MEP design for building services engineers</div>
+        <div class="dc-covers"><span class="dc-tag">Electrical CAD</span><span class="dc-tag">Revit MEP</span><span class="dc-tag">HVAC</span><span class="dc-tag">Plumbing</span></div>
+      </div>
+    </div>
   </div>
-  <div class="courses-panel" id="tab-ai">
-    <a href="ai.html#product-design" class="course-card" style="border-color:rgba(232,21,27,.3);"><span class="hot-badge">NEW</span><div class="course-icon">🤖</div><h3>Certificate in AI-Powered Smart Product Design</h3><p>Harness generative AI for product design workflows. Future-proof your engineering career in the age of AI.</p><span class="course-dur">Short Course</span><div class="course-tags"><span class="ctag">Generative AI</span><span class="ctag">Product Design</span></div></a>
-    <a href="ai.html#building-design" class="course-card" style="border-color:rgba(232,21,27,.3);"><span class="hot-badge">NEW</span><div class="course-icon">🏙️</div><h3>Certificate in AI-Powered Smart Building Design</h3><p>AI-driven smart building design — integrate artificial intelligence into AEC workflows.</p><span class="course-dur">Short Course</span><div class="course-tags"><span class="ctag">Generative AI</span><span class="ctag">Building Design</span></div></a>
-    <a href="ai.html" class="course-card"><div class="course-icon">📈</div><h3>Executive Diploma in BIM + AI</h3><p>Combine BIM and AI for the ultimate AEC career advantage — the most future-ready combination in construction tech.</p><span class="course-dur">400+ Hours</span><div class="course-tags"><span class="ctag">BIM</span><span class="ctag">AI</span><span class="ctag">Revit</span></div></a>
+
+  <!-- ── PROJECT PLANNING ── -->
+  <div class="courses-panel" id="tab-proj">
+    <div class="cat-header">
+      <div class="cat-icon-big" style="background:#eaf3de;">📊</div>
+      <div><h3>Project Planning &amp; <span class="red">Management</span></h3><p>Industry-standard project scheduling and management tools</p></div>
+    </div>
+    <div class="sub-label">Core Courses</div>
+    <div class="course-grid">
+      <a class="course-card" href="#contact"><div class="cc-icon">📅</div><div class="cc-name">Microsoft Project</div><div class="cc-desc">Project scheduling, resource management, tracking and reporting using MS Project.</div><span class="cc-dur">Short Course</span></a>
+      <a class="course-card" href="#contact"><div class="cc-icon">🏗️</div><div class="cc-name">Primavera P6</div><div class="cc-desc">Enterprise project management for construction — scheduling, cost control and reporting.</div><span class="cc-dur">Short Course</span></a>
+    </div>
   </div>
+
+  <!-- ── IT COURSES ── -->
+  <div class="courses-panel" id="tab-it">
+    <div class="cat-header">
+      <div class="cat-icon-big" style="background:#e8f8f0;">💻</div>
+      <div><h3>IT <span class="red">Courses</span></h3><p>Programming languages and emerging technology</p></div>
+    </div>
+    <div class="sub-label">Programming Courses</div>
+    <div class="course-grid">
+      <a class="course-card" href="it-cs.html#c"><div class="cc-icon">🖥️</div><div class="cc-name">C Programming</div><div class="cc-desc">Fundamentals of programming — variables, loops, functions, pointers and data structures.</div><span class="cc-dur">Short Course</span></a>
+      <a class="course-card" href="it-cs.html#cpp"><div class="cc-icon">⚡</div><div class="cc-name">C++ Programming</div><div class="cc-desc">Object-oriented programming, STL, templates and application development using C++.</div><span class="cc-dur">Short Course</span></a>
+      <a class="course-card" href="it-cs.html#python"><div class="cc-icon">🐍</div><div class="cc-name">Python</div><div class="cc-desc">Automation, OOP, data structures and real-world Python applications for industry professionals.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="it-cs.html#iot"><div class="cc-icon">🌐</div><div class="cc-name">IoT — Internet of Things</div><div class="cc-desc">Connect devices with sensors and software using Raspberry Pi, cloud computing and IoT protocols.</div><span class="cc-dur">80 Hours</span></a>
+    </div>
+  </div>
+
+  <!-- ── MASTER & DIPLOMA ── -->
+  <div class="courses-panel" id="tab-masters">
+    <div class="cat-header">
+      <div class="cat-icon-big" style="background:#fff1f1;">🏆</div>
+      <div><h3>Master &amp; Diploma <span class="red">Programs</span></h3><p>Job-oriented combo courses — 240 to 440 hours</p></div>
+    </div>
+
+    <div class="sub-label">Master Certificate Programs — ~240 Hours</div>
+    <div class="master-grid">
+      <div class="master-card"><div class="mc-num">01</div><div class="mc-ico">⚙️</div><div class="mc-title">Master Certificate in Product Design with AI</div><div class="mc-dur">~240 Hours · AutoCAD + SolidWorks/CATIA + AI Tools</div></div>
+      <div class="master-card"><div class="mc-num">02</div><div class="mc-ico">🏗️</div><div class="mc-title">Master Certificate in Building Design (BIM)</div><div class="mc-dur">~240 Hours · AutoCAD Civil + STAAD.Pro + Revit</div></div>
+      <div class="master-card"><div class="mc-num">03</div><div class="mc-ico">🛋️</div><div class="mc-title">Master Certificate in Interior Design</div><div class="mc-dur">~240 Hours · AutoCAD + SketchUp + 3ds Max</div></div>
+      <div class="master-card"><div class="mc-num">04</div><div class="mc-ico">🔩</div><div class="mc-title">Master Certificate in Mechanical CAD/CAM/CAE</div><div class="mc-dur">~240 Hours · SolidWorks + ANSYS + CNC/CAM</div></div>
+      <div class="master-card"><div class="mc-num">05</div><div class="mc-ico">⚡</div><div class="mc-title">Master Certificate in MEP Design</div><div class="mc-dur">~240 Hours · Electrical CAD + Revit MEP</div></div>
+      <div class="master-card"><div class="mc-num">06</div><div class="mc-ico">🏢</div><div class="mc-title">Master Certificate in BIM</div><div class="mc-dur">~240 Hours · Revit Arch + Structure + MEP</div></div>
+    </div>
+
+    <div class="sub-label">Executive Diploma Programs — 400–440 Hours</div>
+    <div class="diploma-grid">
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · ~410 Hours</span>
+        <div class="dc-title">Executive Diploma in Product Design</div>
+        <div class="dc-dur">Flagship product design program — industry-ready in one course</div>
+        <div class="dc-covers"><span class="dc-tag">CAD (SolidWorks / CATIA / Creo)</span><span class="dc-tag">CAE (ANSYS)</span><span class="dc-tag">GD&amp;T</span><span class="dc-tag">Manufacturing</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · ~400 Hours</span>
+        <div class="dc-title">Executive Diploma in Architectural Design</div>
+        <div class="dc-dur">Complete architecture design from 2D to 3D rendering</div>
+        <div class="dc-covers"><span class="dc-tag">AutoCAD Architecture</span><span class="dc-tag">Revit Architecture</span><span class="dc-tag">SketchUp</span><span class="dc-tag">3ds Max + V-Ray</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · 400–440 Hours</span>
+        <div class="dc-title">Executive Diploma in BIM</div>
+        <div class="dc-dur">Most in-demand program — ISO 19650 certified</div>
+        <div class="dc-covers"><span class="dc-tag">Revit Arch + Structure + MEP</span><span class="dc-tag">BIM workflow</span><span class="dc-tag">Navisworks</span><span class="dc-tag">BIM 360</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · ~400 Hours</span>
+        <div class="dc-title">Executive Diploma in Structural Design</div>
+        <div class="dc-dur">Comprehensive structural analysis for civil engineers</div>
+        <div class="dc-covers"><span class="dc-tag">STAAD.Pro</span><span class="dc-tag">ETABS</span><span class="dc-tag">Structural Analysis</span><span class="dc-tag">RCC &amp; Steel Design</span></div>
+      </div>
+      <div class="diploma-card">
+        <span class="dc-badge">Executive Diploma · ~440 Hours</span>
+        <div class="dc-title">Executive Diploma in Interior Design</div>
+        <div class="dc-dur">End-to-end interior design and 3D visualization</div>
+        <div class="dc-covers"><span class="dc-tag">AutoCAD</span><span class="dc-tag">SketchUp</span><span class="dc-tag">3ds Max + V-Ray</span><span class="dc-tag">Interior Planning</span></div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
+<!-- HOW WE TRAIN -->
 <section class="sec sec-white">
   <div class="kicker">Program Structure</div>
   <h2 class="sec-title">How We <span class="red">Train</span></h2>
   <p class="sec-sub">CADD Centre's experiential learning methodology — real projects, hands-on training, validated certification ensures every student is job-ready.</p>
   <div class="prog-grid">
     <div class="prog-card c1"><h3>Proficient Certification</h3><div class="hrs">80 Hours</div><p>In-depth knowledge and competency in a core CAD software. Master one tool to professional level with real-world projects.</p><div class="prog-num">80</div></div>
-    <div class="prog-card c2"><h3>Master Certification</h3><div class="hrs">160 Hours</div><p>Master multiple complementing CAD tools across engineering domains with specializations in all disciplines.</p><div class="prog-num">160</div></div>
+    <div class="prog-card c2"><h3>Master Certification</h3><div class="hrs">240 Hours</div><p>Master multiple complementing CAD tools across engineering domains with specializations in all disciplines.</p><div class="prog-num">240</div></div>
     <div class="prog-card c3"><h3>Expert Certification</h3><div class="hrs">240 Hours</div><p>Engineering and managerial competencies for developing new products and services with qualified industry tutors.</p><div class="prog-num">240</div></div>
-    <div class="prog-card c4"><h3>Executive Diploma</h3><div class="hrs">400 Hours</div><p>Career-defining programs — BIM, Product Design, Architecture. MNC-ready certification recognized globally.</p><div class="prog-num">400</div></div>
+    <div class="prog-card c4"><h3>Executive Diploma</h3><div class="hrs">400+ Hours</div><p>Career-defining programs — BIM, Product Design, Architecture. MNC-ready certification recognized globally.</p><div class="prog-num">400</div></div>
   </div>
 </section>
 
+<!-- WHY US -->
 <section class="sec sec-gray" id="why-us">
   <div class="kicker">Why Choose Us</div>
   <h2 class="sec-title">The <span class="red">CADD Centre</span> Advantage</h2>
@@ -410,6 +862,7 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
   </div>
 </section>
 
+<!-- REVIEWS -->
 <section class="sec sec-white" id="reviews">
   <div class="kicker">Student Reviews</div>
   <h2 class="sec-title">What Our <span class="red">Students Say</span></h2>
@@ -424,6 +877,7 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="sec sec-gray" id="contact">
   <div class="contact-grid">
     <div class="c-info">
@@ -453,29 +907,65 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
           <label>Course Interested In *</label>
           <select id="fcourse" required>
             <option value="">— Select a course —</option>
-            <optgroup label="🏗️ AEC / BIM">
-              <option value="BIM — Executive Diploma">🔥 BIM — Executive Diploma (Most Popular)</option>
-              <option value="Master Certificate in Architecture Design">Master Certificate in Architecture Design</option>
-              <option value="Master Certificate in Building Design">Master Certificate in Building Design</option>
-              <option value="Revit MEP">Revit MEP</option>
-              <option value="STAAD.Pro">STAAD.Pro</option>
+            <optgroup label="⚙️ Mechanical CADD">
+              <option>AutoCAD (2D &amp; 3D)</option>
+              <option>SolidWorks</option>
+              <option>CATIA</option>
+              <option>Creo (Pro-E)</option>
+              <option>Siemens NX</option>
+              <option>Inventor</option>
+              <option>Ansys (CAE)</option>
+              <option>HyperMesh</option>
+              <option>GD&amp;T</option>
+              <option>CNC Programming / CAM</option>
+              <option>MATLAB</option>
+              <option>MasterCAM</option>
+              <option>Executive Diploma in Product Design</option>
             </optgroup>
-            <optgroup label="⚙️ Mechanical / Product Design">
-              <option value="Master Certificate in Product Design">Master Certificate in Product Design</option>
-              <option value="SolidWorks">SolidWorks</option>
-              <option value="CATIA">CATIA</option>
-              <option value="ANSYS">ANSYS</option>
-              <option value="Creo">Creo</option>
+            <optgroup label="🏗️ Civil / Construction">
+              <option>AutoCAD Civil</option>
+              <option>AutoCAD Civil 3D</option>
+              <option>STAAD.Pro</option>
+              <option>ETABS</option>
+              <option>Revit Structure</option>
+              <option>MX Road</option>
+              <option>Revit Architecture (Civil)</option>
+              <option>Executive Diploma in Structural Design</option>
             </optgroup>
-            <optgroup label="💻 IT & CS">
-              <option value="Python for Professionals">Python for Professionals</option>
-              <option value="Data Analytics">Data Analytics</option>
-              <option value="Java">Java</option>
-              <option value="Ethical Hacking">Ethical Hacking</option>
+            <optgroup label="🏛️ Architecture &amp; Interior">
+              <option>AutoCAD Architecture</option>
+              <option>Revit Architecture (BIM)</option>
+              <option>SketchUp</option>
+              <option>3ds Max</option>
+              <option>V-Ray Rendering</option>
+              <option>Lumion</option>
+              <option>Executive Diploma in Architectural Design</option>
+              <option>Executive Diploma in Interior Design</option>
             </optgroup>
-            <optgroup label="🤖 AI-Powered">
-              <option value="AI Smart Product Design">AI-Powered Smart Product Design</option>
-              <option value="AI Smart Building Design">AI-Powered Smart Building Design</option>
+            <optgroup label="🏢 BIM">
+              <option>Executive Diploma in BIM — 400+ Hours (Most Popular)</option>
+            </optgroup>
+            <optgroup label="⚡ Electrical &amp; MEP">
+              <option>Electrical CAD</option>
+              <option>Revit MEP</option>
+            </optgroup>
+            <optgroup label="📊 Project Planning">
+              <option>Microsoft Project</option>
+              <option>Primavera P6</option>
+            </optgroup>
+            <optgroup label="💻 IT Courses">
+              <option>C Programming</option>
+              <option>C++ Programming</option>
+              <option>Python</option>
+              <option>IoT — Internet of Things</option>
+            </optgroup>
+            <optgroup label="🏆 Master &amp; Diploma Programs">
+              <option>Master Certificate in Product Design with AI</option>
+              <option>Master Certificate in Building Design (BIM)</option>
+              <option>Master Certificate in Interior Design</option>
+              <option>Master Certificate in Mechanical CAD/CAM/CAE</option>
+              <option>Master Certificate in MEP Design</option>
+              <option>Master Certificate in BIM</option>
             </optgroup>
             <option value="Other / Not Sure">Other / Not Sure — Please advise</option>
           </select>
@@ -519,12 +1009,11 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
       <h5>Courses</h5>
       <ul>
         <li><a href="bim.html">BIM — Executive Diploma</a></li>
-        <li><a href="architecture.html">Architecture Design</a></li>
+        <li><a href="architecture.html">Architecture &amp; Interior</a></li>
         <li><a href="mechanical.html">Mechanical CADD</a></li>
-        <li><a href="architecture.html#building-design">Civil Engineering</a></li>
-        <li><a href="ai.html">AI Smart Design</a></li>
-        <li><a href="it-cs.html">IT & CS</a></li>
-        <li><a href="electrical.html">Electrical CADD</a></li>
+        <li><a href="architecture.html">Civil Engineering</a></li>
+        <li><a href="electrical.html">Electrical &amp; MEP</a></li>
+        <li><a href="it-cs.html">IT Courses</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -556,6 +1045,7 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
 </footer>
 
 <script>
+/* ── Tab switcher ── */
 function showTab(tab,btn){
   document.querySelectorAll('.courses-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -563,10 +1053,13 @@ function showTab(tab,btn){
   btn.classList.add('active');
   trackSection('courses_'+tab);
 }
+
+/* ── Section observer ── */
 const _secs=[{id:'home',name:'Hero'},{id:'bim',name:'BIM'},{id:'courses',name:'Courses'},{id:'why-us',name:'WhyUs'},{id:'reviews',name:'Reviews'},{id:'contact',name:'Contact'}];
 const _obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const s=_secs.find(s=>s.id===e.target.id);if(s)trackSection(s.name);}});},{threshold:.25});
 _secs.forEach(s=>{const el=document.getElementById(s.id);if(el)_obs.observe(el);});
 
+/* ── Lead form ── */
 document.getElementById('leadForm').addEventListener('submit',function(e){
   e.preventDefault();
   const name=document.getElementById('fname').value.trim();
@@ -591,8 +1084,19 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   btn.textContent='✅ Sent!';
   setTimeout(()=>{btn.textContent='📩 Submit — Get Free Counselling';btn.disabled=false;document.getElementById('leadForm').reset();setTimeout(()=>{el.className='';el.textContent='';el.style.display='none';},5000);},4000);
 });
+
+/* ── Nav scroll ── */
 window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30);});
+
+/* ── Time on page ── */
 window.addEventListener('beforeunload',()=>{gtag('event','time_on_page',{event_category:'engagement',value:Math.round((Date.now()-performance.timing.navigationStart)/1000)});});
+
+/* ── Close mega menu on outside click ── */
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.nav-links')){
+    document.querySelectorAll('.mega-l1').forEach(d=>d.style.display='');
+  }
+});
 </script>
 </body>
 </html>
