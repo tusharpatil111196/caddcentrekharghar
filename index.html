@@ -41,7 +41,7 @@ img{display:block;max-width:100%;}
 nav{position:sticky;top:0;z-index:300;background:#fff;border-bottom:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:box-shadow .3s;}
 nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.12);}
 .nav-logo{display:flex;align-items:center;height:100%;}
-.nav-logo svg{height:42px;width:auto;}
+.nav-logo svg{height:50px;width:auto;}
 
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
 .nav-links>li{position:relative;}
@@ -346,13 +346,15 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
 <!-- ═══════════════════════════════════════════ NAV ═══ -->
 <nav id="navbar">
   <div class="nav-logo">
-    <svg viewBox="0 0 310 56" xmlns="http://www.w3.org/2000/svg" aria-label="CADD Centre Training Services">
-      <polygon points="0,6  20,6  32,28 20,50  0,50  12,28" fill="#e8151b"/>
-      <polygon points="16,6 36,6  48,28 36,50 16,50  28,28" fill="#c01015" opacity=".7"/>
-      <text x="56" y="37" font-family="'Barlow Condensed',Arial Narrow,Impact,sans-serif" font-weight="900" font-size="34" fill="#1a2332" letter-spacing="1">CADD</text>
-      <text x="57" y="51" font-family="'Barlow','Arial',sans-serif" font-weight="700" font-size="12" fill="#e8151b" letter-spacing="5.5">CENTRE</text>
-      <text x="157" y="22" font-family="Arial,sans-serif" font-size="10" fill="#1a2332" font-weight="400">®</text>
-      <text x="57" y="60" font-family="'Barlow','Arial',sans-serif" font-size="8" fill="#8595ae" letter-spacing="1">TRAINING SERVICES</text>
+    <svg viewBox="0 0 220 54" xmlns="http://www.w3.org/2000/svg" aria-label="CADD Centre Kharghar">
+      <!-- CADD — bold red serif, large -->
+      <text x="2" y="28" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="30" fill="#e8151b" letter-spacing="2">CADD</text>
+      <!-- CENTRE — bold red serif, same weight -->
+      <text x="2" y="46" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="20" fill="#e8151b" letter-spacing="3">CENTRE</text>
+      <!-- KHARGHAR — grey, smaller, spaced -->
+      <text x="138" y="46" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="11" fill="#888" letter-spacing="2.5">KHARGHAR</text>
+      <!-- vertical divider between CENTRE and KHARGHAR -->
+      <line x1="132" y1="34" x2="132" y2="50" stroke="#ddd" stroke-width="1"/>
     </svg>
   </div>
 
@@ -385,6 +387,8 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
               <a class="l2-item" href="mechanical.html#cnc"><div class="l2-dot dot-mech">🏭</div><div><div class="l2-name">CNC Programming / CAM</div><div class="l2-desc">G-code, CAM strategies &amp; simulation</div><span class="l2-hrs hrs-mech">Short</span></div></a>
               <a class="l2-item" href="mechanical.html#matlab"><div class="l2-dot dot-mech">📊</div><div><div class="l2-name">MATLAB</div><div class="l2-desc">Engineering computation &amp; simulation</div><span class="l2-hrs hrs-mech">Short</span></div></a>
               <a class="l2-item" href="mechanical.html#mastercam"><div class="l2-dot dot-mech">🔧</div><div><div class="l2-name">MasterCAM</div><div class="l2-desc">CAM software for CNC machining</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+              <a class="l2-item" href="mechanical.html#ansys-fluent"><div class="l2-dot dot-mech">🌊</div><div><div class="l2-name">Ansys Fluent</div><div class="l2-desc">CFD — airflow, heat transfer &amp; fluid mechanics</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#navisworks"><div class="l2-dot dot-mech">🔗</div><div><div class="l2-name">Navisworks</div><div class="l2-desc">Clash detection &amp; 4D construction simulation</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
             </div>
             <div class="l2-diploma">
               <div><div class="l2-diploma-label">🏆 Executive Diploma in Product Design — ~410 hrs</div><div class="l2-diploma-sub">SolidWorks / CATIA / Creo + ANSYS + GD&amp;T + Manufacturing</div></div>
@@ -503,6 +507,12 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
               <a class="l2-item" href="mechanical.html"><div class="l2-dot dot-mech">🔩</div><div><div class="l2-name">Master Cert. in Mechanical CAD/CAM/CAE</div><span class="l2-hrs hrs-mech">240 hrs</span></div></a>
               <a class="l2-item" href="electrical.html"><div class="l2-dot dot-elec">⚡</div><div><div class="l2-name">Master Cert. in MEP Design</div><span class="l2-hrs hrs-elec">240 hrs</span></div></a>
               <a class="l2-item" href="bim.html"><div class="l2-dot dot-civil">🏢</div><div><div class="l2-name">Master Cert. in BIM</div><span class="l2-hrs hrs-civil">240 hrs</span></div></a>
+            </div>
+            <div style="border-top:1px solid var(--border);padding:8px 18px 4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);">Expert Certificates — ~240 hrs</div>
+            <div class="l2-grid" style="padding:4px 6px 0;">
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-arch">🛋️</div><div><div class="l2-name">Expert Cert. in Interior Design</div><span class="l2-hrs hrs-arch">~240 hrs</span></div></a>
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-mech">⚙️</div><div><div class="l2-name">Expert Cert. in Product Design</div><span class="l2-hrs hrs-mech">~240 hrs</span></div></a>
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-arch">🏛️</div><div><div class="l2-name">Expert Cert. in Architectural Design</div><span class="l2-hrs hrs-arch">~240 hrs</span></div></a>
             </div>
             <div style="border-top:1px solid var(--border);padding:8px 18px 4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);">Executive Diplomas — 400–440 hrs</div>
             <div class="l2-grid" style="padding:4px 6px 6px;">
@@ -633,6 +643,8 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
       <a class="course-card" href="mechanical.html#cnc"><div class="cc-icon">🏭</div><div class="cc-name">CNC Programming / CAM</div><div class="cc-desc">G-code programming, CAM strategies and machining simulation for CNC manufacturing.</div><span class="cc-dur">Short Course</span></a>
       <a class="course-card" href="mechanical.html#matlab"><div class="cc-icon">📊</div><div class="cc-name">MATLAB</div><div class="cc-desc">Engineering computation, signal processing, simulation and matrix-based programming.</div><span class="cc-dur">Short Course</span></a>
       <a class="course-card" href="mechanical.html#mastercam"><div class="cc-icon">🔧</div><div class="cc-name">MasterCAM</div><div class="cc-desc">Industry-leading CAM software for CNC machining, toolpath creation and manufacturing automation.</div><span class="cc-dur">Short Course</span></a>
+      <a class="course-card" href="mechanical.html#ansys-fluent"><div class="cc-icon">🌊</div><div class="cc-name">Ansys Fluent</div><div class="cc-desc">Computational Fluid Dynamics (CFD) simulation — airflow, heat transfer, turbulence and fluid mechanics.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="mechanical.html#navisworks"><div class="cc-icon">🔗</div><div class="cc-name">Navisworks</div><div class="cc-desc">3D model review, clash detection, 4D construction simulation and project coordination.</div><span class="cc-dur">80 Hours</span></a>
     </div>
     <div class="sub-label">Executive Diploma Program</div>
     <div class="diploma-grid">
@@ -795,6 +807,13 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
       <div class="master-card"><div class="mc-num">06</div><div class="mc-ico">🏢</div><div class="mc-title">Master Certificate in BIM</div><div class="mc-dur">~240 Hours · Revit Arch + Structure + MEP</div></div>
     </div>
 
+    <div class="sub-label">Expert Certificate Programs — ~240 Hours</div>
+    <div class="master-grid">
+      <div class="master-card" style="background:linear-gradient(135deg,#3b1a6e,#6c3db5);"><div class="mc-num">01</div><div class="mc-ico">🛋️</div><div class="mc-title">Expert Certificate in Interior Design</div><div class="mc-dur">~240 Hours · AutoCAD + SketchUp + 3ds Max + V-Ray + Interior Planning</div></div>
+      <div class="master-card" style="background:linear-gradient(135deg,#6c1a1a,#b53d3d);"><div class="mc-num">02</div><div class="mc-ico">⚙️</div><div class="mc-title">Expert Certificate in Product Design</div><div class="mc-dur">~240 Hours · SolidWorks / CATIA / Creo + ANSYS + GD&amp;T + Manufacturing</div></div>
+      <div class="master-card" style="background:linear-gradient(135deg,#1a3a4a,#2e6080);"><div class="mc-num">03</div><div class="mc-ico">🏛️</div><div class="mc-title">Expert Certificate in Architectural Design</div><div class="mc-dur">~240 Hours · AutoCAD Architecture + Revit + SketchUp + 3ds Max + V-Ray</div></div>
+    </div>
+
     <div class="sub-label">Executive Diploma Programs — 400–440 Hours</div>
     <div class="diploma-grid">
       <div class="diploma-card">
@@ -915,7 +934,9 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
               <option>Siemens NX</option>
               <option>Inventor</option>
               <option>Ansys (CAE)</option>
+              <option>Ansys Fluent (CFD)</option>
               <option>HyperMesh</option>
+              <option>Navisworks</option>
               <option>GD&amp;T</option>
               <option>CNC Programming / CAM</option>
               <option>MATLAB</option>
@@ -967,6 +988,11 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
               <option>Master Certificate in MEP Design</option>
               <option>Master Certificate in BIM</option>
             </optgroup>
+            <optgroup label="🎓 Expert Certificate Programs">
+              <option>Expert Certificate in Interior Design</option>
+              <option>Expert Certificate in Product Design</option>
+              <option>Expert Certificate in Architectural Design</option>
+            </optgroup>
             <option value="Other / Not Sure">Other / Not Sure — Please advise</option>
           </select>
         </div>
@@ -994,13 +1020,11 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <svg viewBox="0 0 310 62" xmlns="http://www.w3.org/2000/svg" style="height:40px;width:auto;margin-bottom:14px;" aria-label="CADD Centre">
-        <polygon points="0,6  20,6  32,28 20,50  0,50  12,28" fill="#e8151b"/>
-        <polygon points="16,6 36,6  48,28 36,50 16,50  28,28" fill="#c01015" opacity=".6"/>
-        <text x="56" y="37" font-family="'Barlow Condensed',Arial Narrow,Impact,sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="1">CADD</text>
-        <text x="57" y="51" font-family="'Barlow','Arial',sans-serif" font-weight="700" font-size="12" fill="#e8151b" letter-spacing="5.5">CENTRE</text>
-        <text x="157" y="22" font-family="Arial,sans-serif" font-size="10" fill="#ffffff" font-weight="400">®</text>
-        <text x="57" y="61" font-family="'Barlow','Arial',sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" letter-spacing="1">TRAINING SERVICES</text>
+      <svg viewBox="0 0 220 54" xmlns="http://www.w3.org/2000/svg" style="height:44px;width:auto;margin-bottom:14px;" aria-label="CADD Centre Kharghar">
+        <text x="2" y="28" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="30" fill="#e8151b" letter-spacing="2">CADD</text>
+        <text x="2" y="46" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="20" fill="#e8151b" letter-spacing="3">CENTRE</text>
+        <text x="138" y="46" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="11" fill="#888" letter-spacing="2.5">KHARGHAR</text>
+        <line x1="132" y1="34" x2="132" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
       </svg>
       <p>CADD Centre Kharghar is an official training centre of CADD Centre Training Services — Asia's largest CAD/CAM/BIM skill development network with 37+ years of excellence and 4M+ engineers trained globally.</p>
       <p style="margin-top:10px;color:rgba(255,255,255,.2);font-size:12px;">Operated by Chakra Technologies · Plot No. 5, 101, Grow More Tower, Kharghar, Navi Mumbai 410210</p>
