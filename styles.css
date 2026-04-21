@@ -185,3 +185,4 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
 
 @media(max-width:900px){.bim-inner,.contact-grid{grid-template-columns:1fr;gap:36px;}.footer-top{grid-template-columns:1fr 1fr;}.form-row{grid-template-columns:1fr;}.tb-l{display:none;}}
 @media(max-width:640px){.footer-top{grid-template-columns:1fr;}.hero h1{font-size:2.8rem;}.hero-stats{flex-direction:column;gap:16px;}.stat-it{border-right:none;padding-right:0;margin-right:0;padding-bottom:14px;border-bottom:1px solid var(--border);}.stat-it:last-child{border-bottom:none;padding-bottom:0;}}
+

@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="nav.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer=window.dataLayer||[];
@@ -37,41 +38,196 @@
     <a href="https://lms.caddcentre.com/" target="_blank">Student Login</a>
   </div>
 </div>
+<!-- ═══════════════════════════════════════════ NAV ═══ -->
 <nav id="navbar">
-  <div class="nav-logo">
-    <svg viewBox="0 0 310 56" xmlns="http://www.w3.org/2000/svg" aria-label="CADD Centre Training Services">
-      <polygon points="0,6  20,6  32,28 20,50  0,50  12,28" fill="#e8151b"/>
-      <polygon points="16,6 36,6  48,28 36,50 16,50  28,28" fill="#c01015" opacity=".7"/>
-      <text x="56" y="37" font-family="'Barlow Condensed',Arial Narrow,Impact,sans-serif" font-weight="900" font-size="34" fill="#1a2332" letter-spacing="1">CADD</text>
-      <text x="57" y="51" font-family="'Barlow','Arial',sans-serif" font-weight="700" font-size="12" fill="#e8151b" letter-spacing="5.5">CENTRE</text>
-      <text x="157" y="22" font-family="Arial,sans-serif" font-size="10" fill="#1a2332" font-weight="400">®</text>
-      <text x="57" y="60" font-family="'Barlow','Arial',sans-serif" font-size="8" fill="#8595ae" letter-spacing="1">TRAINING SERVICES</text>
-    </svg>
-  </div>
+
+  <img src="static/CADD.svg" alt="Logo" style="width:150px;">
+ 
+
   <ul class="nav-links">
-    <li><a href="index.html#home">Home</a></li>
+    <li><a href="#home">Home</a></li>
+
+    <!-- COURSES mega nav -->
     <li>
-      <a href="index.html#courses">Courses ▾</a>
-      <div class="dd">
-        <div class="dd-sec">AEC / BIM</div>
-        <a href="bim.html">🏗️ BIM – Executive Diploma</a>
-        <a href="architecture.html">Civil & Architecture</a>
-        <a href="architecture.html#revit-mep">Revit Architecture / MEP</a>
-        <div class="dd-sec">Product Design</div>
-        <a href="mechanical.html#mechanical-cadd">Mechanical CADD</a>
-        <a href="mechanical.html#solidworks-catia-ansys">SolidWorks / CATIA / ANSYS</a>
-        <div class="dd-sec">Information Technology</div>
-        <a href="it-cs.html#python">Python / Data Analytics / Java</a>
-        <a href="it-cs.html#ethical-hacking-iot">Ethical Hacking / IoT</a>
-        <div class="dd-sec">AI-Powered New</div>
-        <a href="ai.html">AI Smart Design Courses</a>
+      <a href="#courses">Courses ▾</a>
+      <div class="mega-l1">
+
+        <!-- 1. Mechanical CADD -->
+        <div class="l1-row">
+          <span><span class="l1-ico">⚙️</span>Mechanical CADD</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">⚙️ Mechanical &amp; Product Design</div><div class="l2-head-sub">Product design, manufacturing &amp; simulation</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_mech')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="mechanical.html#autocad"><div class="l2-dot dot-mech">📐</div><div><div class="l2-name">AutoCAD (2D &amp; 3D)</div><div class="l2-desc">2D drafting &amp; 3D solid modelling</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#solidworks"><div class="l2-dot dot-mech">🔩</div><div><div class="l2-name">SolidWorks</div><div class="l2-desc">Parts, assemblies, sheet metal, weldments</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#catia"><div class="l2-dot dot-mech">✈️</div><div><div class="l2-name">CATIA</div><div class="l2-desc">Advanced surfacing &amp; parametric design</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#creo"><div class="l2-dot dot-mech">🛠️</div><div><div class="l2-name">Creo (Pro-E)</div><div class="l2-desc">3D product design &amp; CNC manufacturing</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#nx"><div class="l2-dot dot-mech">🖥️</div><div><div class="l2-name">Siemens NX</div><div class="l2-desc">Synchronous modelling &amp; assembly</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#inventor"><div class="l2-dot dot-mech">⚙️</div><div><div class="l2-name">Inventor</div><div class="l2-desc">Parametric 3D &amp; mechanical simulation</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#ansys"><div class="l2-dot dot-mech">🔬</div><div><div class="l2-name">Ansys (CAE / FEA)</div><div class="l2-desc">Structural, thermal &amp; dynamic simulation</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#hypermesh"><div class="l2-dot dot-mech">🧩</div><div><div class="l2-name">HyperMesh</div><div class="l2-desc">Advanced meshing &amp; CAE pre-processing</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#gdt"><div class="l2-dot dot-mech">📏</div><div><div class="l2-name">GD&amp;T</div><div class="l2-desc">Geometric Dimensioning &amp; Tolerancing</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+              <a class="l2-item" href="mechanical.html#cnc"><div class="l2-dot dot-mech">🏭</div><div><div class="l2-name">CNC Programming / CAM</div><div class="l2-desc">G-code, CAM strategies &amp; simulation</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+              <a class="l2-item" href="mechanical.html#matlab"><div class="l2-dot dot-mech">📊</div><div><div class="l2-name">MATLAB</div><div class="l2-desc">Engineering computation &amp; simulation</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+              <a class="l2-item" href="mechanical.html#mastercam"><div class="l2-dot dot-mech">🔧</div><div><div class="l2-name">MasterCAM</div><div class="l2-desc">CAM software for CNC machining</div><span class="l2-hrs hrs-mech">Short</span></div></a>
+              <a class="l2-item" href="mechanical.html#ansys-fluent"><div class="l2-dot dot-mech">🌊</div><div><div class="l2-name">Ansys Fluent</div><div class="l2-desc">CFD — airflow, heat transfer &amp; fluid mechanics</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html#navisworks"><div class="l2-dot dot-mech">🔗</div><div><div class="l2-name">Navisworks</div><div class="l2-desc">Clash detection &amp; 4D construction simulation</div><span class="l2-hrs hrs-mech">80 hrs</span></div></a>
+            </div>
+            <div class="l2-diploma">
+              <div><div class="l2-diploma-label">🏆 Executive Diploma in Product Design — ~410 hrs</div><div class="l2-diploma-sub">SolidWorks / CATIA / Creo + ANSYS + GD&amp;T + Manufacturing</div></div>
+              <a class="l2-diploma-link" href="mechanical.html#diploma">View Program →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Civil / Construction -->
+        <div class="l1-row">
+          <span><span class="l1-ico">🏗️</span>Civil / Construction</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">🏗️ Civil &amp; Construction Design</div><div class="l2-head-sub">For civil engineers &amp; site professionals</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_civil')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="architecture.html#autocad-civil"><div class="l2-dot dot-civil">📐</div><div><div class="l2-name">AutoCAD Civil</div><div class="l2-desc">2D site plans &amp; civil drafting</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#civil3d"><div class="l2-dot dot-civil">🛣️</div><div><div class="l2-name">AutoCAD Civil 3D</div><div class="l2-desc">Grading, corridors &amp; pipe networks</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#staad"><div class="l2-dot dot-civil">🏗️</div><div><div class="l2-name">STAAD.Pro</div><div class="l2-desc">Structural analysis — buildings &amp; bridges</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#etabs"><div class="l2-dot dot-civil">🏢</div><div><div class="l2-name">ETABS</div><div class="l2-desc">Multi-storey building analysis &amp; seismic</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#revit-structure"><div class="l2-dot dot-civil">🧱</div><div><div class="l2-name">Revit Structure</div><div class="l2-desc">BIM-based structural modelling</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#mxroad"><div class="l2-dot dot-civil">🛤️</div><div><div class="l2-name">MX Road</div><div class="l2-desc">Highway design &amp; road alignment</div><span class="l2-hrs hrs-civil">Short</span></div></a>
+              <a class="l2-item" href="architecture.html#revit-arch"><div class="l2-dot dot-civil">🏛️</div><div><div class="l2-name">Revit Architecture</div><div class="l2-desc">BIM-based architectural design</div><span class="l2-hrs hrs-civil">80 hrs</span></div></a>
+            </div>
+            <div class="l2-diploma">
+              <div><div class="l2-diploma-label">🏆 Executive Diploma in Structural Design — ~400 hrs</div><div class="l2-diploma-sub">STAAD.Pro + ETABS + Structural Analysis + RCC &amp; Steel Design</div></div>
+              <a class="l2-diploma-link" href="architecture.html#diploma-structural">View Program →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Architecture & Interior -->
+        <div class="l1-row">
+          <span><span class="l1-ico">🏛️</span>Architecture &amp; Interior</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">🏛️ Architecture &amp; Interior Design</div><div class="l2-head-sub">For architects, designers &amp; visualization artists</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_arch')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="architecture.html#autocad-arch"><div class="l2-dot dot-arch">📐</div><div><div class="l2-name">AutoCAD Architecture</div><div class="l2-desc">Floor plans, elevations &amp; sections</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#revit-arch"><div class="l2-dot dot-arch">🏛️</div><div><div class="l2-name">Revit Architecture (BIM)</div><div class="l2-desc">BIM-based architectural design &amp; docs</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#sketchup"><div class="l2-dot dot-arch">🎨</div><div><div class="l2-name">SketchUp</div><div class="l2-desc">Concept modelling &amp; quick 3D design</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#3dsmax"><div class="l2-dot dot-arch">🖼️</div><div><div class="l2-name">3ds Max</div><div class="l2-desc">Interior/exterior 3D modelling</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#vray"><div class="l2-dot dot-arch">✨</div><div><div class="l2-name">V-Ray Rendering</div><div class="l2-desc">Photorealistic renders &amp; walkthroughs</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#lumion"><div class="l2-dot dot-arch">🌿</div><div><div class="l2-name">Lumion</div><div class="l2-desc">Real-time 3D rendering &amp; animation</div><span class="l2-hrs hrs-arch">80 hrs</span></div></a>
+            </div>
+            <div class="l2-diploma">
+              <div><div class="l2-diploma-label">🏆 Executive Diploma in Interior Design — ~440 hrs</div><div class="l2-diploma-sub">AutoCAD + SketchUp + 3ds Max + V-Ray + Interior Planning</div></div>
+              <a class="l2-diploma-link" href="architecture.html#diploma-interior">View Program →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Electrical & MEP -->
+        <div class="l1-row">
+          <span><span class="l1-ico">⚡</span>Electrical &amp; MEP</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">⚡ Electrical &amp; MEP Courses</div><div class="l2-head-sub">For electrical engineers &amp; building services</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_elec')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="electrical.html#eleccad"><div class="l2-dot dot-elec">⚡</div><div><div class="l2-name">Electrical CAD</div><div class="l2-desc">Electrical diagrams, schematics &amp; panel layouts</div><span class="l2-hrs hrs-elec">80 hrs</span></div></a>
+              <a class="l2-item" href="electrical.html#revit-mep"><div class="l2-dot dot-elec">🏭</div><div><div class="l2-name">Revit MEP</div><div class="l2-desc">HVAC, electrical &amp; plumbing BIM design</div><span class="l2-hrs hrs-elec">80 hrs</span></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Project Planning -->
+        <div class="l1-row">
+          <span><span class="l1-ico">📊</span>Project Planning</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">📊 Project Planning &amp; Management</div><div class="l2-head-sub">Industry-standard project scheduling tools</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_proj')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-proj">📅</div><div><div class="l2-name">Microsoft Project</div><div class="l2-desc">Project scheduling, tracking &amp; reporting</div><span class="l2-hrs hrs-proj">Short</span></div></a>
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-proj">🏗️</div><div><div class="l2-name">Primavera P6</div><div class="l2-desc">Enterprise project management for construction</div><span class="l2-hrs hrs-proj">Short</span></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. IT Courses -->
+        <div class="l1-row">
+          <span><span class="l1-ico">💻</span>IT Courses</span><span class="l1-arr">›</span>
+          <div class="mega-l2">
+            <div class="l2-head">
+              <div><div class="l2-head-title">💻 Information Technology Courses</div><div class="l2-head-sub">Programming &amp; emerging technologies</div></div>
+              <a href="#contact" class="l2-enq" onclick="trackClick('nav_enq_it')">Enquire →</a>
+            </div>
+            <div class="l2-grid">
+              <a class="l2-item" href="it-cs.html#c"><div class="l2-dot dot-it">🖥️</div><div><div class="l2-name">C Programming</div><div class="l2-desc">Fundamentals, pointers &amp; data structures</div><span class="l2-hrs hrs-it">Short</span></div></a>
+              <a class="l2-item" href="it-cs.html#cpp"><div class="l2-dot dot-it">⚡</div><div><div class="l2-name">C++ Programming</div><div class="l2-desc">OOP, STL &amp; application development</div><span class="l2-hrs hrs-it">Short</span></div></a>
+              <a class="l2-item" href="it-cs.html#python"><div class="l2-dot dot-it">🐍</div><div><div class="l2-name">Python</div><div class="l2-desc">Automation, OOP &amp; real-world applications</div><span class="l2-hrs hrs-it">80 hrs</span></div></a>
+              <a class="l2-item" href="it-cs.html#iot"><div class="l2-dot dot-it">🌐</div><div><div class="l2-name">IoT — Internet of Things</div><div class="l2-desc">Raspberry Pi, cloud &amp; IoT protocols</div><span class="l2-hrs hrs-it">80 hrs</span></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Master & Diploma Programs -->
+        <div class="l1-row">
+          <span><span class="l1-ico">🏆</span>Master &amp; Diploma Programs</span><span class="l1-arr">›</span>
+          <div class="mega-l2" style="min-width:620px;">
+            <div class="l2-head">
+              <div><div class="l2-head-title">🏆 Master Certificates &amp; Executive Diplomas</div><div class="l2-head-sub">Job-oriented combo programs — 240 to 440 hours</div></div>
+              <a href="#contact" class="l2-enq">Enquire →</a>
+            </div>
+            <div class="l2-masters-title" style="padding:10px 18px 2px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);">Master Certificates — 240 hrs</div>
+            <div class="l2-grid" style="padding:4px 6px 0;">
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-mech">⚙️</div><div><div class="l2-name">Master Cert. in Product Design with AI</div><span class="l2-hrs hrs-mech">240 hrs</span></div></a>
+              <a class="l2-item" href="bim.html"><div class="l2-dot dot-civil">🏗️</div><div><div class="l2-name">Master Cert. in Building Design (BIM)</div><span class="l2-hrs hrs-civil">240 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html"><div class="l2-dot dot-arch">🛋️</div><div><div class="l2-name">Master Cert. in Interior Design</div><span class="l2-hrs hrs-arch">240 hrs</span></div></a>
+              <a class="l2-item" href="mechanical.html"><div class="l2-dot dot-mech">🔩</div><div><div class="l2-name">Master Cert. in Mechanical CAD/CAM/CAE</div><span class="l2-hrs hrs-mech">240 hrs</span></div></a>
+              <a class="l2-item" href="electrical.html"><div class="l2-dot dot-elec">⚡</div><div><div class="l2-name">Master Cert. in MEP Design</div><span class="l2-hrs hrs-elec">240 hrs</span></div></a>
+              <a class="l2-item" href="bim.html"><div class="l2-dot dot-civil">🏢</div><div><div class="l2-name">Master Cert. in BIM</div><span class="l2-hrs hrs-civil">240 hrs</span></div></a>
+            </div>
+            <div style="border-top:1px solid var(--border);padding:8px 18px 4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);">Expert Certificates — ~240 hrs</div>
+            <div class="l2-grid" style="padding:4px 6px 0;">
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-arch">🛋️</div><div><div class="l2-name">Expert Cert. in Interior Design</div><span class="l2-hrs hrs-arch">~240 hrs</span></div></a>
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-mech">⚙️</div><div><div class="l2-name">Expert Cert. in Product Design</div><span class="l2-hrs hrs-mech">~240 hrs</span></div></a>
+              <a class="l2-item" href="#contact"><div class="l2-dot dot-arch">🏛️</div><div><div class="l2-name">Expert Cert. in Architectural Design</div><span class="l2-hrs hrs-arch">~240 hrs</span></div></a>
+            </div>
+            <div style="border-top:1px solid var(--border);padding:8px 18px 4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);">Executive Diplomas — 400–440 hrs</div>
+            <div class="l2-grid" style="padding:4px 6px 6px;">
+              <a class="l2-item" href="mechanical.html#diploma"><div class="l2-dot dot-mech">⚙️</div><div><div class="l2-name">Exec. Diploma in Product Design</div><span class="l2-hrs hrs-mech">~410 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#diploma-arch"><div class="l2-dot dot-arch">🏛️</div><div><div class="l2-name">Exec. Diploma in Architectural Design</div><span class="l2-hrs hrs-arch">~400 hrs</span></div></a>
+              <a class="l2-item" href="bim.html"><div class="l2-dot dot-civil">🏗️</div><div><div class="l2-name">Exec. Diploma in BIM</div><span class="l2-hrs hrs-civil">400–440 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#diploma-structural"><div class="l2-dot dot-civil">🧱</div><div><div class="l2-name">Exec. Diploma in Structural Design</div><span class="l2-hrs hrs-civil">~400 hrs</span></div></a>
+              <a class="l2-item" href="architecture.html#diploma-interior"><div class="l2-dot dot-arch">🛋️</div><div><div class="l2-name">Exec. Diploma in Interior Design</div><span class="l2-hrs hrs-arch">~440 hrs</span></div></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BIM quick link -->
+        <div style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px;">
+          <a class="l1-row" href="bim.html" style="color:var(--red);">
+            <span>🔥 Executive Diploma in BIM — Most Popular</span>
+            <span style="font-size:10px;background:var(--red);color:#fff;padding:1px 6px;border-radius:3px;font-size:9.5px;">HOT</span>
+          </a>
+        </div>
+
       </div>
     </li>
+    <!-- end Courses -->
+
     <li><a href="bim.html">BIM</a></li>
-    <li><a href="index.html#why-us">Why Us</a></li>
-    <li><a href="index.html#reviews">Reviews</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-    <li><a href="index.html#contact" class="nav-cta" onclick="trackClick('nav_enquire')">Enquire Now →</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta" onclick="trackClick('nav_enquire')">Enquire Now →</a></li>
   </ul>
 </nav>
 <section class="hero" id="page-hero">
