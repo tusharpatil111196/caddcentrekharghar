@@ -320,6 +320,7 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
 @media(max-width:900px){.bim-inner,.contact-grid{grid-template-columns:1fr;gap:36px;}.footer-top{grid-template-columns:1fr 1fr;}.form-row{grid-template-columns:1fr;}.tb-l{display:none;}.mega-l2{display:none!important;}}
 @media(max-width:640px){.footer-top{grid-template-columns:1fr;}.hero h1{font-size:2.8rem;}.hero-stats{flex-direction:column;gap:16px;}.stat-it{border-right:none;padding-right:0;margin-right:0;padding-bottom:14px;border-bottom:1px solid var(--border);}.stat-it:last-child{border-bottom:none;padding-bottom:0;}.mega-l1{display:none!important;}}
 </style>
+  <link rel="stylesheet" href="clean.css">
 </head>
 <body>
 
@@ -347,9 +348,13 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
 <nav id="navbar">
 
         <img src="static/CADD.svg" alt="Logo" style="width:150px;">
- 
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+    <span class="nav-toggle-icon" aria-hidden="true"></span>
+    <span>Menu</span>
+  </button>
 
-  <ul class="nav-links">
+
+  <ul class="nav-links" id="primary-nav">
     <li><a href="#home">Home</a></li>
     <li><a href="executive-diploma.html">Executive Diplomas</a></li>
     <li><a href="master-programs.html">Master Programs</a></li>
@@ -559,6 +564,29 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
       <div class="stat-it"><div class="stat-num">100+</div><div class="stat-lbl">Industry-Ready Courses</div></div>
     </div>
   </div>
+  <aside class="hero-card" aria-label="Training pathways at CADD Centre Kharghar">
+    <div class="hero-card-heading">
+      <span class="hero-card-mark" aria-hidden="true">CC</span>
+      <span>Make your next move</span>
+    </div>
+    <h2>Learn the tools behind real projects.</h2>
+    <div class="hero-pathway">
+      <span class="hero-pathway-number">01</span>
+      <div><strong>Design</strong><small>Mechanical · Civil · Architecture</small></div>
+      <span class="hero-pathway-arrow" aria-hidden="true">↗</span>
+    </div>
+    <div class="hero-pathway">
+      <span class="hero-pathway-number">02</span>
+      <div><strong>Build</strong><small>BIM · MEP · Structural</small></div>
+      <span class="hero-pathway-arrow" aria-hidden="true">↗</span>
+    </div>
+    <div class="hero-pathway">
+      <span class="hero-pathway-number">03</span>
+      <div><strong>Automate</strong><small>AI · Programming · Controls</small></div>
+      <span class="hero-pathway-arrow" aria-hidden="true">↗</span>
+    </div>
+    <div class="hero-card-location"><span aria-hidden="true"></span> Learn locally in Kharghar</div>
+  </aside>
 </section>
 
 <!-- BIM FEATURED -->
@@ -773,7 +801,7 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
       <a class="course-card" href="it-cs.html#c"><div class="cc-icon"><img src="static/Software logo Images/CSIT/c.png" alt="C Programming"></div><div class="cc-name">C Programming</div><div class="cc-desc">Fundamentals of programming — variables, loops, functions, pointers and data structures.</div><span class="cc-dur">Short Course</span></a>
       <a class="course-card" href="it-cs.html#cpp"><div class="cc-icon"><img src="static/Software logo Images/CSIT/c++.png" alt="C++ Programming"></div><div class="cc-name">C++ Programming</div><div class="cc-desc">Object-oriented programming, STL, templates and application development using C++.</div><span class="cc-dur">Short Course</span></a>
       <a class="course-card" href="it-cs.html#python"><div class="cc-icon"><img src="static/Software logo Images/CSIT/python.jpg" alt="Python"></div><div class="cc-name">Python</div><div class="cc-desc">Automation, OOP, data structures and real-world Python applications for industry professionals.</div><span class="cc-dur">80 Hours</span></a>
-      <a class="course-card" href="it-cs.html#iot"><div class="cc-icon"><img src="static/Software logo Images/CSIT/Raspberry_Pi-Logo.wine.png" alt="IoT"></div><div class="cc-name">IoT — Internet of Things</div><div class="cc-desc">Connect devices with sensors and software using Raspberry Pi, cloud computing and IoT protocols.</div><span class="cc-dur">80 Hours</span></a>
+      <a class="course-card" href="it-cs.html#iot"><div class="cc-icon"><img src="static/Software logo Images/Electrical/Raspberry_Pi-Logo.wine.png" alt="IoT"></div><div class="cc-name">IoT — Internet of Things</div><div class="cc-desc">Connect devices with sensors and software using Raspberry Pi, cloud computing and IoT protocols.</div><span class="cc-dur">80 Hours</span></a>
     </div>
   </div>
 
@@ -1067,7 +1095,7 @@ footer{background:#1a2332;color:#fff;padding:60px 5% 28px;}
       <h5>Top Streams</h5>
       <ul>
         <li><a href="mechanical.html">Mechanical CADD</a></li>
-        <li><a href="architecture.html">Civil CADD</a></li>
+        <li><a href="civil.html">Civil CADD</a></li>
         <li><a href="architecture.html">Architectural CADD</a></li>
         <li><a href="electrical.html">Electrical CADD</a></li>
         <li><a href="bim.html">Building Information Modeling</a></li>
@@ -1168,5 +1196,6 @@ document.addEventListener('click',function(e){
   }
 });
 </script>
+  <script src="navigation.js" defer></script>
 </body>
 </html>

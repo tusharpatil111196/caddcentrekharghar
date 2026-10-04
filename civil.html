@@ -18,6 +18,7 @@
   gtag('config','G-XXXXXXXXXX');
   function trackClick(n){gtag('event','click',{event_category:'cta',event_label:n});}
 </script>
+  <link rel="stylesheet" href="clean.css">
 </head>
 <body>
 <a href="https://wa.me/919833851019" target="_blank" class="wa-float" onclick="trackClick('wa_float')">
@@ -41,7 +42,11 @@
 <!-- ═══════════════════════════════════════════ NAV ═══ -->
 <nav id="navbar">
   <img src="static/CADD.svg" alt="Logo" style="width:150px;">
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+    <span class="nav-toggle-icon" aria-hidden="true"></span>
+    <span>Menu</span>
+  </button>
+  <ul class="nav-links" id="primary-nav">
     <li><a href="index.html">Home</a></li>
     <li>
       <a href="#courses">Courses ▾</a>
@@ -275,5 +280,6 @@
     }
   });
 </script>
+  <script src="navigation.js" defer></script>
 </body>
 </html>
